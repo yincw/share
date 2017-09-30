@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="#" target="_blank">
+        <link rel="stylesheet" href="./resources/css/shower-dark.css">
+        <title>深入浅出 React 技术栈_2017.09.30_尹传武</title>
+    </head>
+    <body class="shower list">
+
+        <header class="caption">
+            <h1>深入浅出 React 技术栈</h1>
+            <p>尹传武</p>
+        </header>
+
+        <section class="slide black" id="theme">
+    <img class="cover" src="./pictures/cover.png" alt="Cover">
+    <div class="place c">
+        <img src="./pictures/react_logo.svg">
+        <h2 class="pattern-theme">深入浅出 React 技术栈</h2>
+        <p>『入门篇』</p>
+    </div>
+   <ul class="pattern-author">
+       <li>尹传武</li>
+       <li>@福禄网络 / UED</li>
+       <li>2017.09.30</li>
+   </ul>
+   <style>
+        #theme {
+            background-color: #222;
+        }
+        #theme .cover {
+            opacity: 0.05;
+        }
+        .theme .place,
+        #theme .place {
+            text-align: center;
+        }
+        .theme .place img,
+        #theme .place img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 60px;
+        }
+        .theme .place p,
+        #theme .place p {
+            color: #61dafb;
+            font-size: 30px;
+        }
+        .theme .pattern-theme,
+        #theme .pattern-theme {
+            position: relative;
+            line-height: 1;
+
+            color: #61dafb;
+            background-color: transparent;
+            font-size: 50px;
+            padding: 20px 0 0;
+        }
+        #theme .pattern-author {
+            color: #444;
+        }
+
+        .slide h2,
+        .slide .pattern-part,
+        .slide a {
+            color: #61dafb;
+        }
+        .slide a.note {
+          color: #444;
+        }
+        .striped th,
+        .striped td {
+            padding: 10px 20px;
+        }
+        .slide .pattern-contents {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-center img {
+            margin-bottom: 20px;
+        }
+        .react img,
+        .react h2 {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+        .react h2 {
+            font-size: 70px;
+            margin-left: 20px;
+            color: #00D8FF;
+        }
+
+        .none>li::before {
+            display: none;
+            width: 0;
+            content: "";
+            padding: 0;
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>内容大纲</h2>
+      <ul>
+        <li>“React” 是什么</li>
+        <li>为什么选 React</li>
+        <li>React 的生态系统</li>
+        <li>VD：前端项目源码管理平台</li>
+        <li>示例：Hello World！</li>
+        <li>提问时间</li>
+      </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout shrink">课堂问答</h2>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>课堂问答</h2>
+      <ol>
+        <li>大家理解的“前端”是什么？</li>
+        <li class="next">“React” 是什么？</li>
+        <li class="next">与其他前端技术栈相比，React 优势有哪些？</li>
+        <li class="next">除 React 本身外，还应学习哪些思想、实践？</li>
+      </ol>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">“React” 是什么</h2>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>“React” 是什么</h2>
+      <p>先来了解几个概念及相关实现：</p>
+      <ol>
+        <li>前后端分离</li>
+        <li>Single Page Web Applications（SPA, 单页 Web 应用）</li>
+      </ol>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+        <div class="pattern-number">01.</div>
+        <h2 class="pattern-part">前后端分离</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>Web 应用发展路线</h2>
+      <ol>
+        <li>早期：前后端不分离，后端 MVC 时代</li>
+        <li>中期：前后端分离，Ajax 时代</li>
+        <li>现在：Single Page Web Applications（SPA, 单页 Web 应用）</li>
+      </ol>
+    </div>
+</section>
+
+<section class="slide">
+    <img class="place" src="pictures/traditional.png" alt="" title="Traditional">
+</section>
+
+<section class="slide">
+    <div class="middle">
+        <h2>中期：Ajax 时代（一）</h2>
+        <pre><code class="language-markup">&lt;% _.each(datas, function (data) {%&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            &lt;div class=&quot;cell&quot;&gt;
+                &lt;%= data.Name%&gt;
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;div class=&quot;cell&quot;&gt;
+                &lt;a
+                class=&quot;btn btn-block btn-xs btn-outlined btn-orange js-edit&quot;
+                href=&quot;#&quot;
+                data-id=&quot;&lt;%=data.Id%&gt;&quot;&gt;
+                修改
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;%})%&gt;
+</code></pre>
+
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>中期：Ajax 时代（二）</h2>
+        <pre><code class="language-markup">$.fl.ajaxLoader({
+    url: &quot;/CustomerService.svc/List&quot;,
+    method: &#39;POST&#39;,
+    data: JSON.stringify(obj),
+    success: function(result) {
+        if(result&amp;&amp;result.Data)
+        {
+            $(&#39;#list&#39;).html( _.template(tpl_customerlist)({datas: result.Data}) );
+        }
+        else
+        {
+            $(&#39;#list&#39;).html( _.template(tpl_customerlist)({datas: &quot;&quot;}) );
+        }
+    }
+});
+</code></pre>
+
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+        <div class="pattern-number">02.</div>
+        <h2 class="pattern-part">Single Page Applications</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+        <h2>Single Page Applications</h2>
+        <p>Single Page Applications（SPA, 单页应用程序）是指在浏览器中运行的应用，所谓单页也就是页面始终都只有一个页面，它们在使用期间不会重新加载页面。</p>
+        <p>更准确的说就是只通过单个URL就能完整访问的应用程序。</p>
+    </div>
+</section>
+
+<section class="slide">
+    <img class="place" src="pictures/Traditional_vs_SPA.png" alt="" title="传统架构和 SPA 架构中数据库、服务端、客户端的职责">
+</section>
+
+<section class="slide">
+    <a href="https://item.jd.com/11545544.html?dist=jd" target="_blank"><img class="place" src="pictures/SPA.png" alt="" title="SPA"></a>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <blockquote class="middle">
+          <p>React：</p>
+          <ul>
+            <li>是一个 SPA 概念的的技术实现；</li>
+            <li>是一个渐进式的前端技术栈；</li>
+          </ul>
+      </blockquote>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">为什么选 React</h2>
+</section>
+
+<!-- <section class="slide">
+    <h2>为什么选 React（一）</h2>
+    <table class="striped">
+    <tr>
+        <th scope="col">React</th>
+        <th>Vue</th>
+        <th>Angular</th>
+    </tr>
+    <tr>
+        <th scope="row">Messenger</th>
+        <td>Mixtape</td>
+        <td>Small batch</td>
+    </tr>
+    <tr>
+        <th scope="row">Meggings</th>
+        <td>Freegan</td>
+        <td>Retro biodiesel</td>
+    </tr>
+    <tr>
+        <th scope="row">Vegan</th>
+        <td>Occupy</td>
+        <td>Normcore</td>
+    </tr>
+    <tr>
+        <th scope="row">Next level</th>
+        <td>Selfies</td>
+        <td>Sustainable</td>
+    </tr>
+    <tr>
+        <th scope="row">Umami</th>
+        <td>Asymmetrical</td>
+        <td>Keytar</td>
+    </tr>
+    <tr>
+        <th scope="row">Biodiesel</th>
+        <td>Haven’t heard</td>
+        <td>Skateboard</td>
+    </tr>
+    </table>
+</section> -->
+
+<section class="slide black">
+    <a href="https://github.com/yincw/vs/blob/master/React%20vs%20Vue%20vs%20Angular.md"><img class="cover" src="./pictures/vs.png" alt="Cover"></a>
+</section>
+
+<section class="slide">
+    <h2 class="shout">React 的生态系统</h2>
+</section>
+
+<section class="slide black">
+    <img class="cover" src="./pictures/st.png" alt="Cover">
+</section>
+
+<section class="slide theme">
+  <div class="place c">
+      <img src="./pictures/vd.png">
+      <h2 class="pattern-theme">前端可视化开发平台</h2>
+  </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>前端可视化开发平台</h2>
+      <p>一个前端项目（React，etc...）源码管理平台。</p>
+      <p><a class="note" href="https://fuluue.github.io/vd/" target="_blank">进入官网，了解更多信息...</a></p>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Hello World！</h2>
+</section>
+
+<section class="slide black">
+    <img class="cover" src="./pictures/faq.png" alt="Cover">
+</section>
+
+<section class="slide">
+    <h2 class="shout grow">课后作业</h2>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>课后作业</h2>
+      <ol>
+        <li>如何书写 React 组件？</li>
+        <li class="next">React 组件生命周期方法及含义有哪些？</li>
+        <li class="next">React Props 和 State 的作用？</li>
+        <li class="next">React 应用中，如何进行数据绑定？</li>
+        <li class="next">React 应用中，如何进行异常排查？</li>
+        <li class="next">React 应用中，如何进行性能优化？</li>
+      </ol>
+    </div>
+</section>
+
+        <div class="progress"></div>
+
+        <script src="./resources/js/shower.js"></script>
+        <script src="./resources/js/prism.js"></script>
+    </body>
+</html>

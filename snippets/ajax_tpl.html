@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="#" target="_blank">
+        <link rel="stylesheet" href="./resources/css/shower-dark.css">
+        <title>深入浅出 React 技术栈_2017.09.30_尹传武</title>
+    </head>
+    <body class="shower list">
+
+        <header class="caption">
+            <h1>深入浅出 React 技术栈</h1>
+            <p>尹传武</p>
+        </header>
+
+        <pre><code class="language-markup">&lt;% _.each(datas, function (data) {%&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            &lt;div class=&quot;cell&quot;&gt;
+                &lt;%= data.Name%&gt;
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+            &lt;div class=&quot;cell&quot;&gt;
+                &lt;a
+                class=&quot;btn btn-block btn-xs btn-outlined btn-orange js-edit&quot;
+                href=&quot;#&quot;
+                data-id=&quot;&lt;%=data.Id%&gt;&quot;&gt;
+                修改
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;%})%&gt;
+</code></pre>
+
+        <div class="progress"></div>
+
+        <script src="./resources/js/shower.js"></script>
+        <script src="./resources/js/prism.js"></script>
+    </body>
+</html>
