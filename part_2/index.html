@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="#" target="_blank">
+        <link rel="stylesheet" href="./resources/css/shower-dark.css">
+        <title>深入浅出 React 技术栈_2017.10.27_尹传武</title>
+    </head>
+    <body class="shower list">
+
+        <header class="caption">
+            <h1>深入浅出 React 技术栈</h1>
+            <p>尹传武</p>
+        </header>
+
+        <section class="slide black" id="theme">
+    <img class="cover" src="./pictures/cover.png" alt="Cover">
+    <div class="place c">
+        <img src="./pictures/react_logo.svg">
+        <h2 class="pattern-theme">深入浅出 React 技术栈</h2>
+        <p>『提高篇』</p>
+    </div>
+   <ul class="pattern-author">
+       <li>尹传武</li>
+       <li>@福禄网络 / UED</li>
+       <li>2017.10.27</li>
+   </ul>
+   <style>
+        #theme {
+            background-color: #222;
+        }
+        #theme .cover {
+            opacity: 0.05;
+        }
+        .theme .place,
+        #theme .place {
+            text-align: center;
+        }
+        .theme .place img,
+        #theme .place img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 60px;
+        }
+        .theme .place p,
+        #theme .place p {
+            color: #61dafb;
+            font-size: 30px;
+        }
+        .theme .pattern-theme,
+        #theme .pattern-theme {
+            position: relative;
+            line-height: 1;
+
+            color: #61dafb;
+            background-color: transparent;
+            font-size: 50px;
+            padding: 20px 0 0;
+        }
+        #theme .pattern-author {
+            color: #444;
+        }
+
+        .slide h2,
+        .slide .pattern-part,
+        .slide a {
+            color: #61dafb;
+        }
+        .slide a.note {
+          color: #444;
+        }
+        .striped th,
+        .striped td {
+            padding: 10px 20px;
+        }
+        .slide .pattern-contents {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-center img {
+            margin-bottom: 20px;
+        }
+        .react img,
+        .react h2 {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+        }
+        .react h2 {
+            font-size: 70px;
+            margin-left: 20px;
+            color: #00D8FF;
+        }
+
+        .none>li::before {
+            display: none;
+            width: 0;
+            content: "";
+            padding: 0;
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>内容大纲</h2>
+      <ul>
+        <li>上节回顾</li>
+        <li>创建 React 组件</li>
+        <li>数据绑定</li>
+        <li>异常排查</li>
+        <li>性能优化</li>
+        <li>提问时间</li>
+      </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>作业抽查</h2>
+      <ol>
+        <li class="next">如何创建 React 组件？</li>
+        <li class="next">如何进行数据绑定？</li>
+        <li class="next">如何进行异常排查？</li>
+        <li class="next">如何进行性能优化？</li>
+      </ol>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout grow">上节回顾</h2>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>上节回顾</h2>
+      <ol>
+        <li class="next">“React” 是什么？</li>
+        <li class="next">为什么选 React？</li>
+        <li class="next">React 的生态系统？</li>
+        <li class="next">VD：前端可视化开发平台？</li>
+      </ol>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout grow">创建 React 组件</h2>
+</section>
+
+<section class="slide">
+    <div class="middle">
+        <div class="pattern-number">01.</div>
+        <h2 class="pattern-part">基础知识</h2>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>前端“组件化开发”</h2>
+      <ol>
+        <li class="next">什么是前端“组件化开发”？
+          <ol>
+            <li class="next">前端组件化开发是一种“高内聚，低耦合，易读写，可复用”的开发思想。</li>
+            <li class="next">组件的抽象是一门艺术，仁者见仁，智者见智。</li>
+          </ol>
+        </li>
+        <li class="next">为什么要进行组件化开发？
+          <ol>
+            <li class="next">JavaScript 和 CSS 的全局特性</li>
+            <li class="next">可协同开发</li>
+            <li class="next">可维护性</li>
+            <li class="next">可复用性</li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>ES2015+ 语法简介</h2>
+      <ol>
+        <li>Module</li>
+        <li>Class</li>
+        <li>let 和 const</li>
+        <li>扩展运算符（...）</li>
+        <li>Promise 对象</li>
+        <li>Generator 函数</li>
+        <li>async 函数</li>
+        <li>...</li>
+      </ol>
+      <ul>
+        <li><a class="note" href="http://babeljs.io/learn-es2015/">Learn ES2015</a></li>
+        <li><a class="note" href="http://es6.ruanyifeng.com/">ECMAScript 6 入门</a></li>
+      </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>JSX 语法</h2>
+      <ol>
+        <li>{...}</li>
+        <li>ref</li>
+        <li>dangerouslySetInnerHTML</li>
+        <li>htmlFor vs for 属性</li>
+        <li>className vs class 属性</li>
+        <li>key</li>
+        <li>...</li>
+      </ol>
+      <ul>
+        <li><a class="note" href="https://reactjs.org/docs/introducing-jsx.html">Introducing JSX</a></li>
+      </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>React 组件生命周期函数</h2>
+      <ul>
+        <li>安装 - Mounting
+          <ol>
+            <li>constructor(props)</li>
+            <li>componentWillMount()</li>
+            <li>render()</li>
+            <li>componentDidMount()</li>
+          </ol>
+        </li>
+        <li>更新 - Updating
+          <ol>
+            <li>componentWillReceiveProps(nextProps)</li>
+            <li>shouldComponentUpdate(nextProps, nextState)</li>
+            <li>componentWillUpdate(nextProps, nextState)</li>
+            <li>componentDidUpdate(prevProps, prevState)</li>
+          </ol>
+        </li>
+        <li>卸载 - Unmounting
+          <ol>
+            <li>componentWillUnmount()</li>
+          </ol>
+        </li>
+        <li>错误处理 - Error Handling
+          <ol>
+            <li>componentDidCatch(error, info)</li>
+          </ol>
+        </li>
+      </ul>
+      <ul>
+        <li><a class="note" href="https://reactjs.org/docs/react-component.html">React.Component</a></li>
+      </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>Props 和 State</h2>
+      <table class="striped">
+          <tr>
+              <th>-</th>
+              <th>props</th>
+              <th>state</th>
+          </tr>
+          <tr>
+              <td>能否从父组件获取初始化值？</td>
+              <td>Yes</td>
+              <td>Yes</td>
+          </tr>
+          <tr>
+              <td>能否在组件内设置默认值？</td>
+              <td>Yes</td>
+              <td>Yes</td>
+          </tr>
+          <tr>
+              <td>能否设置子组件的初始值？</td>
+              <td>Yes</td>
+              <td>Yes</td>
+          </tr>
+          <tr>
+              <td>能否被父组件改变？</td>
+              <td>Yes</td>
+              <td>No</td>
+          </tr>
+          <tr>
+              <td>能否在组件内改变？</td>
+              <td>No</td>
+              <td>Yes</td>
+          </tr>
+          <tr>
+              <td>能否在子组件中改变？</td>
+              <td>Yes</td>
+              <td>No</td>
+          </tr>
+      </table>
+      <ul>
+        <li><a class="note">注意：props 和 state 从父组件获取的初始值都会被在组件内设置的默认值覆盖。</a></li>
+        <li><a class="note" href="https://reactjs.org/docs/react-component.html#instance-properties-1">Instance Properties</a></li>
+      </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+        <h2>React Props</h2>
+        <ul>
+            <li>props 就是 properties（属性） 的缩写，你可以使用它把任意类型的数据传递给组件。</li>
+            <li>可以通过 this.props 访问 props，但绝对不能通过这种方式修改它。一个组件绝对不可以自己修改自己的 props。</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+        <h2>React State</h2>
+        <ul>
+            <li>每一个React 组件都拥有自己的 state，state 与 props 的区别在于前者只存在于组件的内部。</li>
+            <li>state 可以通过 setState 来修改，也可以使用 getInitialState 方法提供的一组默认值。只要 setState 被调用，render 就会被调用。</li>
+            <li>千万不能直接修改 this.state，永远记得要通过 this.setState 方法修改。</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div class="middle">
+        <div class="pattern-number">02.</div>
+        <h2 class="pattern-part">React 组件写法</h2>
+    </div>
+</section>
+
+<section class="slide">
+  <div class="middle">
+    <pre><code class="language-javascript">import React from &#39;react&#39;;
+import PropTypes from &#39;prop-types&#39;;
+
+class Test extends React.Component {
+  static propTypes = {
+
+  }
+  static defaultProps = {
+
+  }
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+      &lt;div&gt;Test&lt;/div&gt;
+    );
+  }
+}
+
+export default Test;
+</code></pre>
+
+  </div>
+</section>
+
+<section class="slide">
+  <div class="middle">
+    <pre><code class="language-javascript">import React from &#39;react&#39;;
+import PropTypes from &#39;prop-types&#39;;
+
+const Test = (props) =&gt; {
+    return (
+        &lt;div&gt;Test&lt;/div&gt;
+    );
+};
+
+Test.propTypes = {};
+
+Test.defaultProps = {};
+
+export default Test;
+</code></pre>
+
+  </div>
+</section>
+
+<section class="slide">
+  <div class="middle">
+    <pre><code class="language-javascript">import React from &#39;react&#39;;
+import PropTypes from &#39;prop-types&#39;;
+
+const Test = (props) =&gt; (
+    &lt;div&gt;Test&lt;/div&gt;
+);
+
+Test.propTypes = {};
+
+Test.defaultProps = {};
+
+export default Test;
+</code></pre>
+
+  </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout grow">数据绑定</h2>
+</section>
+
+<section class="slide">
+    <img class="place" src="pictures/redux-data-flow.png" alt="" title="Redux 数据流" style="height: 100%">
+</section>
+
+<section class="slide">
+    <img src="pictures/redux_data_flow.jpg" alt="" title="Redux 数据流" style="width: 100%">
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Redux 父子组件通信</h2>
+        <img src="pictures/redux_communication.svg" alt="" title="Redux 父子组件通信" style="width: 90%">
+    </div>
+</section>
+
+<section class="slide">
+  <div class="middle">
+    <h2>数据绑定</h2>
+    <ol>
+      <li>填写组件信息</li>
+      <li>添加异步流</li>
+      <li>导出 Action</li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout grow">异常排查</h2>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>异常排查</h2>
+      <ol>
+        <li class="next">React DevTools</li>
+        <li class="next">Redux DevTools</li>
+        <li class="next">console.log()</li>
+      </ol>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout grow">性能优化</h2>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>性能优化</h2>
+      <ol>
+        <li class="next">按需加载</li>
+        <li class="next">PNG Sprite</li>
+        <li class="next">SVG Sprite</li>
+      </ol>
+    </div>
+</section>
+
+<section class="slide">
+    <h2 class="shout grow">提问时间</h2>
+</section>
+
+<section class="slide black">
+    <img class="cover" src="./pictures/faq.png" alt="Cover">
+</section>
+
+<section class="slide">
+    <h2 class="shout grow">课后探索</h2>
+</section>
+
+<section class="slide">
+    <div class="middle">
+      <h2>课后探索</h2>
+      <ol>
+        <li class="next">如何编写 React 组件示例文档？
+          <ul>
+            <li><a href="https://react-styleguidist.js.org/">React Styleguidist（风格指南）</a></li>
+          </ul>
+        </li>
+        <li class="next">如何进行组件单元测试？
+          <ul>
+            <li><a href="http://facebook.github.io/jest/">Jest</a></li>
+            <li><a href="http://airbnb.io/enzyme/">Enzyme</a></li>
+          </ul>
+        </li>
+        <li class="next">如何进行性能优化（高级）？
+          <ol>
+            <li><a href="http://facebook.github.io/immutable-js/">Immutable.js - 不可变数据结构</a></li>
+            <li><a href="https://github.com/reactjs/reselect">reselect - Redux 的选择器库</a></li>
+            <li><a href="https://redux-observable.js.org/">redux-observable - 基于 RxJS 5 的 Redux 中间件 。 让变更可观测。</a></li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+</section>
+
+        <div class="progress"></div>
+
+        <script src="./resources/js/shower.js"></script>
+        <script src="./resources/js/prism.js"></script>
+    </body>
+</html>
