@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'React',
-  tagline: '一个 React 教程文档 🔥',
+  title: 'React Notes',
+  tagline: 'React 技术栈学习笔记 📒 React 相关的方方面面 🔥 "独当一面" 必看',
   // favicon: 'img/favicon.ico',
   favicon: 'img/logo.svg',
 
@@ -74,7 +74,7 @@ const config: Config = {
         alt: 'logo',
         src: 'img/logo.svg',
       },
-      title: 'React 小书',
+      title: 'React Notes',
       items: [
         {
           type: 'docSidebar',
@@ -97,15 +97,16 @@ const config: Config = {
           // to: '/faq', 
           label: '场景问题', position: 'left'},
         { to: '/blog', label: '博客', position: 'left'},
+        
+        {
+          type: 'search',
+          position: 'right',
+        },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           to: '/tutorial',
-          label: '文档',
-          position: 'left',
-        },
-        {
-          type: 'search',
+          label: 'Docusaurus',
           position: 'right',
         },
         // {
@@ -145,7 +146,7 @@ const config: Config = {
     docs: {
       sidebar: {
         hideable: true, // 侧边栏：是否显示 隐藏侧边栏菜单按钮
-        autoCollapseCategories: true, // 侧边栏：是否 自动折叠菜单栏
+        // autoCollapseCategories: true, // 侧边栏：是否 自动折叠菜单栏
       },
     },
     footer: {
