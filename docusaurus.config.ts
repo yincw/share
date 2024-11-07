@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'React Notes',
-  tagline: 'React 技术栈学习笔记 📒 React 相关的方方面面 🔥 "独当一面" 必看',
+  tagline: 'React 技术栈学习笔记 📒 React 18/16 相关的方方面面',
   // favicon: 'img/favicon.ico',
   favicon: 'img/logo.svg',
 

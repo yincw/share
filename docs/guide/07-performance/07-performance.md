@@ -1,5 +1,13 @@
 # 性能优化
 
+分类 | Hooks | Classes
+---|---|---
+性能优化 | [useTransition()](https://zh-hans.react.dev/reference/react/useTransition) | [React.startTransition()](https://zh-hans.react.dev/reference/react/startTransition)
+`\-` | [useDeferredValue()](https://zh-hans.react.dev/reference/react/useDeferredValue) | -
+`\-` | [useMemo()](https://zh-hans.react.dev/reference/react/useMemo) | [React.memo()](https://zh-hans.react.dev/reference/react/memo#reference)
+`\-` | [useCallback()](https://zh-hans.react.dev/reference/react/useCallback) | -
+`\-` | [`<Profiler>`](https://zh-hans.react.dev/reference/react/Profiler) | -
+
 - 0.12
   - 支持面向对象的组件写法
 - 0.13
