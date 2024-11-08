@@ -8,6 +8,12 @@
 `\-` | [root.render(reactNode)](https://zh-hans.react.dev/reference/react-dom/client/createRoot#root-render) | 同上
 `\-` | [root.unmount()](https://zh-hans.react.dev/reference/react-dom/client/createRoot#root-unmount) | [ReactDOM.unmountComponentAtNode()](https://zh-hans.legacy.reactjs.org/docs/react-dom.html#unmountcomponentatnode)
 服务端渲染 | [hydrateRoot()](https://zh-hans.react.dev/reference/react-dom/client/hydrateRoot) | [ReactDOM.hydrate()](https://zh-hans.legacy.reactjs.org/docs/react-dom.html#hydrate)
+`\-` | - | [renderToNodeStream(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToNodeStream)
+`\-` | - | [renderToPipeableStream(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToPipeableStream)
+`\-` | - | [renderToReadableStream(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToReadableStream)
+`\-` | - | [renderToStaticMarkup(reactNode, options?) ](https://zh-hans.react.dev/reference/react-dom/server/renderToStaticMarkup)
+`\-` | - | [renderToStaticNodeStream(reactNode, options?) ](https://zh-hans.react.dev/reference/react-dom/server/renderToStaticNodeStream)
+`\-` | - | [renderToString(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToString)
 
 ## 创建组件
 
@@ -67,6 +73,9 @@ JSX | [`<Fragment>` / `<></>`](https://zh-hans.react.dev/reference/react/Fragmen
 `\-` | - | [`classname`](https://zh-hans.react.dev/reference/react-dom/components/common#applying-css-styles)
 `\-` | - | [`dangerouslySetInnerHTML`](https://zh-hans.react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html)
 React元素 | - | [React.isValidElement()](https://zh-hans.react.dev/reference/react/isValidElement)
+`\-` | - | [createElement(type, props, ...children)](https://zh-hans.react.dev/reference/react/createElement)
+`\-` | - | [~~createFactory(type)~~](https://zh-hans.react.dev/reference/react/createFactory)
+`\-` | - | [cloneElement(element, props, ...children)](https://zh-hans.react.dev/reference/react/cloneElement)
 
 ## DOM 实例
 

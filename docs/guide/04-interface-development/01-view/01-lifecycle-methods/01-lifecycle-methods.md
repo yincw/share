@@ -14,7 +14,7 @@
 `\-` | [useMemo()](https://zh-hans.react.dev/reference/react/useMemo) | React.memo()
 `\-` | - | [componentWillUpdate(nextProps, nextState)](https://zh-hans.react.dev/reference/react/Component#componentwillupdate) / [UNSAFE_componentWillUpdate(nextProps, nextState)](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillupdate)
 `\-` | - | render()
-`\-` | - | [getSnapshotBeforeUpdate(prevProps, prevState)](https://zh-hans.react.dev/reference/react/Component#getsnapshotbeforeupdate)
+`\-` | [useLayoutEffect(setup, dependencies?)](https://zh-hans.react.dev/reference/react/useLayoutEffect) | [getSnapshotBeforeUpdate(prevProps, prevState)](https://zh-hans.react.dev/reference/react/Component#getsnapshotbeforeupdate)
 `\-` | useEffect() | [**componentDidUpdate(prevProps, prevState, snapshot?)**](https://zh-hans.react.dev/reference/react/Component#componentdidupdate)
 卸载 | useEffect() | [**componentWillUnmount()**](https://zh-hans.react.dev/reference/react/Component#componentwillunmount)
 错误边界 | [react-error-boundary](https://github.com/bvaughn/react-error-boundary) | [static getDerivedStateFromError(error)](https://zh-hans.react.dev/reference/react/Component#static-getderivedstatefromerror)

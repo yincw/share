@@ -7,6 +7,9 @@ JSX | [`<Fragment>` / `<></>`](https://zh-hans.react.dev/reference/react/Fragmen
 `\-` | - | [`classname`](https://zh-hans.react.dev/reference/react-dom/components/common#applying-css-styles)
 `\-` | - | [`dangerouslySetInnerHTML`](https://zh-hans.react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html)
 React元素 | - | [React.isValidElement()](https://zh-hans.react.dev/reference/react/isValidElement)
+`\-` | - | [createElement(type, props, ...children)](https://zh-hans.react.dev/reference/react/createElement)
+`\-` | - | [~~createFactory(type)~~](https://zh-hans.react.dev/reference/react/createFactory)
+`\-` | - | [cloneElement(element, props, ...children)](https://zh-hans.react.dev/reference/react/cloneElement)
 
 
 - 条件渲染
