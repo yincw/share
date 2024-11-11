@@ -4,3 +4,5 @@
 - 持续集成和交付
   - 分发/上架
 - 发版说明
+- https://umijs.org/docs/api/runtime-config
+- https://umijs.org/blog/legacy-browser

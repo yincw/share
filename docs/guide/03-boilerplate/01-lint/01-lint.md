@@ -7,3 +7,4 @@
   - lint-staged
   - husky
   - commitlint
+- https://umijs.org/docs/guides/lint

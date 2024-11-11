@@ -4,3 +4,4 @@
 - 注意事项
 - 疑难点答疑
 - 核心业务流程图
+- https://umijs.org/docs/introduce/faq

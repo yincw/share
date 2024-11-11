@@ -8,8 +8,6 @@
     - 高级列表
   - 可视化编辑器
     - wangeditor
-  - Element UI
-    - element-ui
 - 图表组件库
   - @ant-design/charts
     - https://ant-design-charts.antgroup.com/examples
@@ -21,7 +19,6 @@
     - https://bizcharts.taobao.com/product/BizCharts4/gallery
   - echarts
     - https://echarts.apache.org/examples/zh/index.html
-  - amap
 - 自定义组件
   - 轮播图/幻灯片
   - 弹窗

@@ -6,3 +6,5 @@
 - 静态分析
   - ESLint
   - Stylelint
+
+- https://umijs.org/docs/guides/prepare

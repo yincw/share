@@ -9,4 +9,5 @@
   - dangerouslySetInnerHTML
 - 浏览器安全
 - 反调试
+  - https://www.techug.com/post/javascript-antidebugging/
 - 防反编译

@@ -1,5 +1,4 @@
 # 移动应用
 
-- React Native
-  - Expo
-- Flutter
+- [React Native](https://reactnative.dev/)
+- [Expo](https://docs.expo.dev/)

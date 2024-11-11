@@ -10,3 +10,6 @@
   - 本地存储
 - 网络请求：前后端交互场景分析、机制设计、架构规划
 - Suspense
+- https://umijs.org/docs/max/request
+- https://umijs.org/docs/max/react-query
+- 

@@ -6,3 +6,4 @@
   - Redux DevTools
 - 远程调试
   - XSwitch
+- https://umijs.org/docs/guides/debug

@@ -2,11 +2,11 @@
 
 分类 | Hooks | Classes
 ---|---|---
-性能优化 | [useTransition()](https://zh-hans.react.dev/reference/react/useTransition) | [React.startTransition()](https://zh-hans.react.dev/reference/react/startTransition)
-`\-` | [useDeferredValue()](https://zh-hans.react.dev/reference/react/useDeferredValue) | -
-`\-` | [useMemo()](https://zh-hans.react.dev/reference/react/useMemo) | [React.memo()](https://zh-hans.react.dev/reference/react/memo#reference)
-`\-` | [useCallback()](https://zh-hans.react.dev/reference/react/useCallback) | -
-`\-` | [`<Profiler>`](https://zh-hans.react.dev/reference/react/Profiler) | -
+性能优化 | [useMemo()](https://zh-hans.react.dev/reference/react/useMemo) v16.8 | [React.memo()](https://zh-hans.react.dev/reference/react/memo#reference) v16.6
+`\-` | [useCallback()](https://zh-hans.react.dev/reference/react/useCallback) v16.8 | -
+`\-` | [`<Profiler>`](https://zh-hans.react.dev/reference/react/Profiler) v16.9 | -
+`\-` | [useTransition()](https://zh-hans.react.dev/reference/react/useTransition) v18.0 | [React.startTransition()](https://zh-hans.react.dev/reference/react/startTransition) v18.0
+`\-` | [useDeferredValue()](https://zh-hans.react.dev/reference/react/useDeferredValue) v18.0 | -
 
 - 0.12
   - 支持面向对象的组件写法
@@ -50,3 +50,4 @@
 - Webpack
   - code-splitting 代码拆分-代码分割/按需加载
   - Tree-Sharking 摇树
+- https://umijs.org/blog/code-splitting

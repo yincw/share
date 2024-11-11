@@ -7,6 +7,11 @@
   - moment
   - day.js
   - date-fns
-  - xlsx
-  - react-viewer 图片预览
-  - viewerjs 文档预览
+  - Excel 导出
+    - xlsx
+    - https://sheetjs.com/
+  - 图片预览
+    - https://fengyuanchen.github.io/viewerjs/
+    - https://www.npmjs.com/package/react-viewer
+  - 文档预览
+    - https://viewerjs.org/

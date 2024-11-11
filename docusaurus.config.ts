@@ -151,47 +151,92 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      // links: [
-      //   {
-      //     title: 'Docs',
-      //     items: [
-      //       {
-      //         label: 'Tutorial',
-      //         to: '/docs/intro',
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: 'Community',
-      //     items: [
-      //       {
-      //         label: 'Stack Overflow',
-      //         href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-      //       },
-      //       {
-      //         label: 'Discord',
-      //         href: 'https://discordapp.com/invite/docusaurus',
-      //       },
-      //       {
-      //         label: 'Twitter',
-      //         href: 'https://twitter.com/docusaurus',
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: 'More',
-      //     items: [
-      //       {
-      //         label: 'Blog',
-      //         to: '/blog',
-      //       },
-      //       {
-      //         label: 'GitHub',
-      //         href: 'https://github.com/facebook/docusaurus',
-      //       },
-      //     ],
-      //   },
-      // ],
+      links: [
+        {
+          title: '教程',
+          items: [
+            {
+              label: 'React 教程',
+              to: '/share/docs/guide/intro/',
+            },
+            {
+              label: 'Vue 教程',
+              href: 'https://yincw.github.io/vue-notes/guide/00-intro/',
+            },
+            {
+              label: 'JavaScript 教程',
+              href: 'https://vikexia.com/JavaScript/Data_Structures?type=Object',
+            },
+          ],
+        },
+        {
+          title: 'API',
+          items: [
+            {
+              label: 'React',
+              to: '/share/docs/api/web/react/',
+            },
+            {
+              label: 'Taro',
+              to: '/share/docs/api/miniprogram/',
+            },
+            {
+              label: 'React Native',
+              to: '/share/docs/api/app/',
+            },
+            {
+              label: 'Electron',
+              to: '/share/docs/api/desktop/',
+            },
+          ],
+        },
+        {
+          title: '开源库',
+          items: [
+            {
+              label: 'Dora',
+              href: 'https://yincw.github.io/dora/',
+            },
+            {
+              label: 'Rework',
+              href: 'https://yincw.github.io/rework/',
+            },
+            {
+              label: 'Anole UI',
+              href: 'https://yincw.github.io/anole-ui/',
+            },
+          ],
+        },
+        {
+          title: '更多',
+          items: [
+            {
+              label: '前后端交互规范',
+              href: 'https://yincw.github.io/api/',
+            },
+            {
+              label: 'Docusaurus',
+              href: 'https://github.com/yincw/rework/',
+            },
+            {
+              label: 'Dumi',
+              href: 'https://github.com/yincw/anole-ui/',
+            },
+            {
+              label: 'VitePress',
+              href: 'https://yincw.github.io/',
+            },
+            {
+              label: 'TypeDoc',
+              href: 'https://github.com/yincw/dora/',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/yincw',
+            },
+          ],
+        },
+      ],
       copyright: `Copyright © ${new Date().getFullYear()} @yincw, Built with Docusaurus.`,
     },
     prism: {
