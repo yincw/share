@@ -29,15 +29,14 @@
 
 分类 | Hooks | Classes
 ---|---|---
-初始化/挂载 | [**useState()**](https://zh-hans.react.dev/reference/react/useState) v16.8 | [**constructor(props)**](https://zh-hans.react.dev/reference/react/Component#constructor) v0.13
-`\-` | - | [componentWillMount()](https://zh-hans.react.dev/reference/react/Component#componentwillmount) v0.13 / [UNSAFE_componentWillMount()](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillmount) v16.3
-`\-` | - | [static getDerivedStateFromProps(props, state)](https://zh-hans.react.dev/reference/react/Component#static-getderivedstatefromprops) v16.3
-`\-` | - | [**render()**](https://zh-hans.react.dev/reference/react/Component#render) v0.13
+挂载 | [**useState()**](https://zh-hans.react.dev/reference/react/useState) v16.8 | [**constructor(props)**](https://zh-hans.react.dev/reference/react/Component#constructor) v0.13
+`\-` | - | [componentWillMount()](https://zh-hans.react.dev/reference/react/Component#componentwillmount) v0.13 <br/> [UNSAFE_componentWillMount()](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillmount) v16.3
+`\-` | `useState(()=>{})` | static getDerivedStateFromProps(props, state) v16.3
+`\-` | `return` | [**render()**](https://zh-hans.react.dev/reference/react/Component#render) v0.13
 `\-` | [**`useEffect(()=>{},[])`**](https://zh-hans.react.dev/reference/react/useEffect) v16.8 | [**componentDidMount()**](https://zh-hans.react.dev/reference/react/Component#componentdidmount) v0.13
-更新 | - | [componentWillReceiveProps(nextProps)](https://zh-hans.react.dev/reference/react/Component#componentwillreceiveprops) v0.13 / [UNSAFE_componentWillReceiveProps(nextProps, nextContext)](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillreceiveprops) v16.3
-`\-` | - | static getDerivedStateFromProps(props, state)
-`\-` | - | [shouldComponentUpdate(nextProps, nextState, nextContext)](https://zh-hans.react.dev/reference/react/Component#shouldcomponentupdate) v0.13
-`\-` | - | [componentWillUpdate(nextProps, nextState)](https://zh-hans.react.dev/reference/react/Component#componentwillupdate) v0.13 / [UNSAFE_componentWillUpdate(nextProps, nextState)](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillupdate) v16.3
+更新 | - | [componentWillReceiveProps(nextProps)](https://zh-hans.react.dev/reference/react/Component#componentwillreceiveprops) v0.13 <br/> [UNSAFE_componentWillReceiveProps(nextProps, nextContext)](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillreceiveprops) v16.3 <br/> [static getDerivedStateFromProps(props, state)](https://zh-hans.react.dev/reference/react/Component#static-getderivedstatefromprops) v16.3
+`\-` | [useMemo()](https://zh-hans.react.dev/reference/react/useMemo) v16.8 | [shouldComponentUpdate(nextProps, nextState, nextContext)](https://zh-hans.react.dev/reference/react/Component#shouldcomponentupdate) v0.13
+`\-` | - | [componentWillUpdate(nextProps, nextState)](https://zh-hans.react.dev/reference/react/Component#componentwillupdate) v0.13 <br/> [UNSAFE_componentWillUpdate(nextProps, nextState)](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillupdate) v16.3
 `\-` | - | render()
 `\-` | [useLayoutEffect(setup, dependencies?)](https://zh-hans.react.dev/reference/react/useLayoutEffect) v16.8 | [getSnapshotBeforeUpdate(prevProps, prevState)](https://zh-hans.react.dev/reference/react/Component#getsnapshotbeforeupdate) v16.3
 `\-` | `useEffect(()=>{}, [''])` | [**componentDidUpdate(prevProps, prevState, snapshot?)**](https://zh-hans.react.dev/reference/react/Component#componentdidupdate) v0.13
@@ -83,8 +82,7 @@ React元素 | - | [React.isValidElement()](https://zh-hans.react.dev/reference/r
 分类 | Hooks | Classes
 ---|---|---
 DOM 引用 | [`ref`](https://zh-hans.react.dev/learn/referencing-values-with-refs) v0.13 | [`ref`](https://zh-hans.react.dev/learn/referencing-values-with-refs) v0.13
-`\-` | [useRef()](https://zh-hans.react.dev/reference/react/useRef) v16.8 | [React.createRef()](https://zh-hans.react.dev/reference/react/createRef) v16.3
-`\-` | - | [~~this.refs~~](https://zh-hans.legacy.reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs) v0.13
+`\-` | [useRef()](https://zh-hans.react.dev/reference/react/useRef) v16.8 | [React.createRef()](https://zh-hans.react.dev/reference/react/createRef) v16.3 <br /> [~~this.refs~~](https://zh-hans.legacy.reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs) v0.13
 组件引用 | [useImperativeHandle()](https://zh-hans.react.dev/reference/react/useImperativeHandle) v16.8 | [React.forwardRef()](https://zh-hans.react.dev/reference/react/forwardRef#forwardref) v16.3
 立即更新DOM | - | [ReactDOM.flushSync()](https://zh-hans.react.dev/reference/react-dom/flushSync) v0.13
 查找DOM | - | [~~ReactDOM.findDOMNode()~~](https://zh-hans.react.dev/reference/react-dom/findDOMNode) v0.13

@@ -216,11 +216,11 @@ const config: Config = {
             },
             {
               label: 'Docusaurus',
-              href: 'https://github.com/yincw/rework/',
+              href: 'https://yincw.github.io/rework/',
             },
             {
               label: 'Dumi',
-              href: 'https://github.com/yincw/anole-ui/',
+              href: 'https://yincw.github.io/anole-ui/',
             },
             {
               label: 'VitePress',
