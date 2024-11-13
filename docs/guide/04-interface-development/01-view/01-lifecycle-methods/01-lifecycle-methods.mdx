@@ -4,16 +4,16 @@
 ---|---|---
 挂载 | [**useState()**](https://zh-hans.react.dev/reference/react/useState) v16.8 | [**constructor(props)**](https://zh-hans.react.dev/reference/react/Component#constructor) v0.13
 `\-` | - | [componentWillMount()](https://zh-hans.react.dev/reference/react/Component#componentwillmount) v0.13 <br/> [UNSAFE_componentWillMount()](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillmount) v16.3
-`\-` | `useState(()=>{})` | static getDerivedStateFromProps(props, state) v16.3
-`\-` | `return` | [**render()**](https://zh-hans.react.dev/reference/react/Component#render) v0.13
+`\-` | `useState(stateFromPropsFn)` | static getDerivedStateFromProps(props, state) v16.3
+`\-` | `return ()` | [**render()**](https://zh-hans.react.dev/reference/react/Component#render) v0.13
 `\-` | [**`useEffect(()=>{},[])`**](https://zh-hans.react.dev/reference/react/useEffect) v16.8 | [**componentDidMount()**](https://zh-hans.react.dev/reference/react/Component#componentdidmount) v0.13
 更新 | - | [componentWillReceiveProps(nextProps)](https://zh-hans.react.dev/reference/react/Component#componentwillreceiveprops) v0.13 <br/> [UNSAFE_componentWillReceiveProps(nextProps, nextContext)](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillreceiveprops) v16.3 <br/> [static getDerivedStateFromProps(props, state)](https://zh-hans.react.dev/reference/react/Component#static-getderivedstatefromprops) v16.3
-`\-` | [useMemo()](https://zh-hans.react.dev/reference/react/useMemo) v16.8 | [shouldComponentUpdate(nextProps, nextState, nextContext)](https://zh-hans.react.dev/reference/react/Component#shouldcomponentupdate) v0.13
+`\-` | [useMemo(()=>{},[''])](https://zh-hans.react.dev/reference/react/useMemo) v16.8 | [shouldComponentUpdate(nextProps, nextState, nextContext)](https://zh-hans.react.dev/reference/react/Component#shouldcomponentupdate) v0.13
 `\-` | - | [componentWillUpdate(nextProps, nextState)](https://zh-hans.react.dev/reference/react/Component#componentwillupdate) v0.13 <br/> [UNSAFE_componentWillUpdate(nextProps, nextState)](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillupdate) v16.3
 `\-` | - | render()
 `\-` | [useLayoutEffect(setup, dependencies?)](https://zh-hans.react.dev/reference/react/useLayoutEffect) v16.8 | [getSnapshotBeforeUpdate(prevProps, prevState)](https://zh-hans.react.dev/reference/react/Component#getsnapshotbeforeupdate) v16.3
 `\-` | `useEffect(()=>{}, [''])` | [**componentDidUpdate(prevProps, prevState, snapshot?)**](https://zh-hans.react.dev/reference/react/Component#componentdidupdate) v0.13
-卸载 | `useEffect(()=>{return ()=>{}}, [''])` | [**componentWillUnmount()**](https://zh-hans.react.dev/reference/react/Component#componentwillunmount) v0.13
+卸载 | `useEffect(()=>{return ()=>{}}, [])` | [**componentWillUnmount()**](https://zh-hans.react.dev/reference/react/Component#componentwillunmount) v0.13
 错误边界 | [react-error-boundary](https://github.com/bvaughn/react-error-boundary) | [static getDerivedStateFromError(error)](https://zh-hans.react.dev/reference/react/Component#static-getderivedstatefromerror) v16.6
 `\-` | - | [componentDidCatch(error, info)](https://zh-hans.react.dev/reference/react/Component#componentdidcatch) v16.0
 
@@ -26,8 +26,52 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Hooks" label="Hooks" default>
 
 ```tsx
-function helloWorld() {
-  console.log('Hello, world!');
+import { useState, useEffect, useMemo } from 'react';
+
+export default function App() {
+  // 类似 constructor()
+  // const [state, setState] = useState(0);
+
+  // 类似 static getDerivedStateFromProps()
+  const stateFromPropsFn = () => {
+    return 0;
+  };
+  const [state, setState] = useState(stateFromPropsFn);
+
+  // 类似 componentDidMount()
+  useEffect(() => {
+    console.log('初始化调用一次');
+ 
+  // 类似 componentWillUnmount()
+    return () => {
+      console.log('组件卸载时调用');
+    }
+  }, [])
+
+  // 类似 shouldComponentUpdate()
+  const newState = useMemo(() => {}, [state])
+
+  // 类似 getSnapshotBeforeUpdate()
+  useLayoutEffect(() => {
+    console.log('在浏览器重新绘制屏幕之前触发');
+  }, [])
+
+  // 类似 componentDidUpdate()
+  useEffect(() => {
+    console.log('依赖值变更重新渲染');
+  }, [state])
+
+  const handleClick = () => {
+    setState(state+1);
+  }
+
+  // 类似 render()
+  return (
+    <div>
+      <div>{ state }</div>
+      <button type="button" onClick={handleClick}>Update</button>
+    </div>
+  );
 }
 ```
 
@@ -35,21 +79,105 @@ function helloWorld() {
 <TabItem value="Classes" label="Classes">
 
 ```tsx
-import { Component } from 'react';
+import { Component, ErrorInfo, ReactNode } from 'react'
 
 class App extends Component {
+  // 组件初始挂载之前运行，常用于声明 state 以及将你的类方法 绑定 到你的类实例上
+  constructor(props: {}) {
+    // 在其他的声明之前调用 super(props)。如果你不这样做，this.props 在 constructor 运行时就会为 undefined。
+    super(props);
+
+    // 声明 state
+    // this.state = {
+    //     total: 0
+    // }
+    
+    // 将声明的类方法绑定到类实例上
+    // this.handleClick = this.handleClick.bind(this);
+  }
+
+  // 声明 类方法
+  // handleClick() {};
+
+  // 声明 state 以及将你的类方法绑定到你的类实例上 可通过下面方式重写
+  // ES7+ 支持
+  // 声明 state
+  state = {
+    total: 0
+  };
+  // 声明 类方法
+  // handleClick = () => {};
+
+
+  static defaultProps = {
+    pageNumber: 1,
+  };
+
+  // 初始挂载和后续更新时调用 render 之前调用，常用于 state 取决于 props 随着时间的推移的变化的场景
+  // 返回一个对象来更新 state，或返回 null 不更新任何内容
+  static getDerivedStateFromProps(props: any, state: any): {} | null {
+    return null;
+  }
+
+  // 组件被添加到屏幕上（挂载）后调用，常用于设置数据获取、订阅监听事件或操作 DOM 节点等场景
+  componentDidMount(): void {
+  }
+
+  // 根据返回结果来确定是否跳过重新渲染，默认值为 true。常用于性能优化
+  // 可以使用 PureComponent 代替，PureComponent 会浅比较 props 和 state 以及减少错过必要更新的概率
+  shouldComponentUpdate(nextProps: Readonly<{}>, nextState: Readonly<{}>, nextContext: any): boolean {
+    return true;
+  }
+
+  // 在浏览器重新绘制屏幕之前触发，阻塞绘制，常用于需要浏览器计算他们的 布局（位置和大小）并重新绘制屏幕的场景
+  getSnapshotBeforeUpdate(prevProps: Readonly<{}>, prevState: Readonly<{}>) {
+      return null;
+  }
+
+  // 组件更新了 props 或 state 重新渲染后立即调用，这个方法不会在首次渲染时调用。
+  // 如果定义了 shouldComponentUpdate 并返回 false，此方法将不会调用
+  // 这个方法一般会和 componentDidMount 以及 componentWillUnmount 一起使用
+  componentDidUpdate(prevProps: Readonly<{}>, prevState: Readonly<{}>, snapshot?: any): void {
+  }
+
+  // 组件被移除屏幕（卸载）之前调用，常用于取消数据获取或移除监听事件 
+  componentWillUnmount(): void {
+  }
+
+  // 当子组件（包括远亲组件）在渲染过程中抛出错误时调用，
+  // 允许你更新 state 来响应错误并向用户显示错误消息。
+  // 通常与 componentDidCatch 一起使用
+  static getDerivedStateFromError(error: any) {
+  }
+
+  // 在某些子组件（包括后代组件）在渲染过程中抛出错误时调用
+  // 常用于在生产中将该错误记录到错误报告服务中。
+  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+  }
+
+  handleClick = () => {
+    this.setState({
+        total: this.state.total + 1
+    });
+  }
+
   render() {
-    return <h1>Hello, {this.props.name}!</h1>;
+    <div>
+      <div>{ this.state.total }</div>
+      <button type="button" onClick={this.handleClick}>Update</button>
+    </div>
   }
 }
+
+export default App;
 ```
 
 </TabItem>
 </Tabs>
 
-## 调用顺序
+### 调用顺序
 
-**从内向外**依次执行
+挂载/更新/卸载：**从内向外** 依次执行
 
 ## 生命周期图示
 

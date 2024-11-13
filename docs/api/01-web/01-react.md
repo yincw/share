@@ -31,16 +31,16 @@
 ---|---|---
 挂载 | [**useState()**](https://zh-hans.react.dev/reference/react/useState) v16.8 | [**constructor(props)**](https://zh-hans.react.dev/reference/react/Component#constructor) v0.13
 `\-` | - | [componentWillMount()](https://zh-hans.react.dev/reference/react/Component#componentwillmount) v0.13 <br/> [UNSAFE_componentWillMount()](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillmount) v16.3
-`\-` | `useState(()=>{})` | static getDerivedStateFromProps(props, state) v16.3
-`\-` | `return` | [**render()**](https://zh-hans.react.dev/reference/react/Component#render) v0.13
+`\-` | `useState(stateFromPropsFn)` | static getDerivedStateFromProps(props, state) v16.3
+`\-` | `return ()` | [**render()**](https://zh-hans.react.dev/reference/react/Component#render) v0.13
 `\-` | [**`useEffect(()=>{},[])`**](https://zh-hans.react.dev/reference/react/useEffect) v16.8 | [**componentDidMount()**](https://zh-hans.react.dev/reference/react/Component#componentdidmount) v0.13
 更新 | - | [componentWillReceiveProps(nextProps)](https://zh-hans.react.dev/reference/react/Component#componentwillreceiveprops) v0.13 <br/> [UNSAFE_componentWillReceiveProps(nextProps, nextContext)](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillreceiveprops) v16.3 <br/> [static getDerivedStateFromProps(props, state)](https://zh-hans.react.dev/reference/react/Component#static-getderivedstatefromprops) v16.3
-`\-` | [useMemo()](https://zh-hans.react.dev/reference/react/useMemo) v16.8 | [shouldComponentUpdate(nextProps, nextState, nextContext)](https://zh-hans.react.dev/reference/react/Component#shouldcomponentupdate) v0.13
+`\-` | [useMemo(()=>{},[''])](https://zh-hans.react.dev/reference/react/useMemo) v16.8 | [shouldComponentUpdate(nextProps, nextState, nextContext)](https://zh-hans.react.dev/reference/react/Component#shouldcomponentupdate) v0.13
 `\-` | - | [componentWillUpdate(nextProps, nextState)](https://zh-hans.react.dev/reference/react/Component#componentwillupdate) v0.13 <br/> [UNSAFE_componentWillUpdate(nextProps, nextState)](https://zh-hans.react.dev/reference/react/Component#unsafe_componentwillupdate) v16.3
 `\-` | - | render()
 `\-` | [useLayoutEffect(setup, dependencies?)](https://zh-hans.react.dev/reference/react/useLayoutEffect) v16.8 | [getSnapshotBeforeUpdate(prevProps, prevState)](https://zh-hans.react.dev/reference/react/Component#getsnapshotbeforeupdate) v16.3
 `\-` | `useEffect(()=>{}, [''])` | [**componentDidUpdate(prevProps, prevState, snapshot?)**](https://zh-hans.react.dev/reference/react/Component#componentdidupdate) v0.13
-卸载 | `useEffect(()=>{return ()=>{}}, [''])` | [**componentWillUnmount()**](https://zh-hans.react.dev/reference/react/Component#componentwillunmount) v0.13
+卸载 | `useEffect(()=>{return ()=>{}}, [])` | [**componentWillUnmount()**](https://zh-hans.react.dev/reference/react/Component#componentwillunmount) v0.13
 错误边界 | [react-error-boundary](https://github.com/bvaughn/react-error-boundary) | [static getDerivedStateFromError(error)](https://zh-hans.react.dev/reference/react/Component#static-getderivedstatefromerror) v16.6
 `\-` | - | [componentDidCatch(error, info)](https://zh-hans.react.dev/reference/react/Component#componentdidcatch) v16.0
 
