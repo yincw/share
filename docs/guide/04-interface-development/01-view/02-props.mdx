@@ -1,0 +1,334 @@
+# 组件属性
+
+分类 | Hooks | Classes
+---|---|---
+属性声明及默认值 | [props=default-value](https://zh-hans.react.dev/learn/passing-props-to-a-component#specifying-a-default-value-for-a-prop) | [static defaultProps](https://zh-hans.react.dev/reference/react/Component#static-defaultprops) v0.13/ES2022
+属性类型及校验 | TypeScript | [static propTypes](https://zh-hans.react.dev/reference/react/Component#static-proptypes) v0.13/ES2022
+读取属性值 | [props](https://zh-hans.react.dev/learn/passing-props-to-a-component#step-2-read-props-inside-the-child-component) | [this.props](https://zh-hans.react.dev/reference/react/Component#props) v0.13
+
+## 大纲
+
+- 属性
+  - 声明
+    - 默认值
+    - 类型及校验
+  - 读取
+  - 绑定
+  - 透传/传递
+  - Children 属性
+  - Render 属性
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## 属性声明
+
+- 属性声明
+- 属性默认值
+- 属性类型及校验（必填）
+
+<Tabs groupId="props" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx showLineNumbers
+// React 15.4及以前
+// import PropTypes from 'react';
+// React v15.5 已弃用
+// 已更改从 prop-types 导入
+// import PropTypes from 'prop-types';
+
+// TypeScript 支持
+// 声明属性类型及校验（必填）
+interface Props {
+  person?: string;
+  size: number;
+}
+// ES6 默认参数支持
+// 声明属性默认值
+export default function Avatar({ person, size = 100 }: Props) {
+  return (
+    <h1>Hooks</h1>
+  )
+}
+
+// 声明属性类型及校验（React 19 将移除）
+// Avatar.propTypes = {
+//   person: PropTypes.string.isRequired,
+//   size: PropTypes.number
+// }
+// 声明属性默认值及校验（React 19 将移除）
+// Avatar.defaultProps = {
+//   size: 100
+// }
+
+export default function Profile() {
+  return (
+    // 声明属性
+    // highlight-next-line
+    <Avatar person="" size={50} />
+  )
+}
+
+// https://zh-hans.react.dev/learn/passing-props-to-a-component#specifying-a-default-value-for-a-prop
+// https://zh-hans.react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-proptypes-and-defaultprops
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx showLineNumbers
+import { Component } from 'react';
+// import PropTypes from 'prop-types';
+
+// TypeScript 支持
+// 声明属性类型及校验（必填）
+interface Props {
+  person?: string;
+  size: number;
+}
+
+class Avatar extends Component {
+  // ES2022 支持
+  // 声明属性默认值及校验
+  static defaultProps: Props = {
+    size: 100
+  }
+  // ES2022 支持
+  // 声明属性类型
+  // static propTypes = {
+  //   person: PropTypes.string.isRequired,
+  //   size: PropTypes.number
+  // }
+
+  render() {
+    return <h1>Classes</h1>
+  }
+}
+
+// Avatar.propTypes = {
+  // person: PropTypes.string.isRequired,
+  // size: PropTypes.number
+// }
+// Avatar.defaultProps = {
+  // size: 100
+// }
+
+export default Avatar;
+
+
+export default function Profile() {
+  return (
+    // 声明属性
+    // highlight-next-line
+    <Avatar person="" size={50} />
+  )
+}
+
+// https://zh-hans.react.dev/reference/react/Component#static-proptypes
+// https://zh-hans.react.dev/reference/react/Component#static-defaultprops
+```
+</TabItem>
+</Tabs>
+
+## 属性读取
+
+<Tabs groupId="props" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx showLineNumbers
+// TypeScript 支持
+// 声明属性类型及校验（必填）
+interface Props {
+  person?: string;
+  size: number;
+}
+
+// ES6 “解构” 支持
+// ES6 默认参数支持
+// 声明属性默认值 
+// export default function Avatar(props: Props) {
+// let person = props.person;
+// let size = props.size;
+export default function Avatar({ person, size = 100 }: Props) {
+  return (
+    // 读取属性
+    // highlight-next-line
+    <h1>Hooks {size}</h1>
+  )
+}
+// https://zh-hans.react.dev/learn/passing-props-to-a-component#step-2-read-props-inside-the-child-component
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx showLineNumbers
+import { Component } from 'react';
+
+// TypeScript 支持
+// 声明属性类型及校验（必填）
+interface Props {
+  person?: string;
+  size: number;
+}
+
+class Avatar extends Component {
+  // ES2022 支持
+  // 声明属性默认值及校验
+  static defaultProps: Props = {
+    size: 100
+  }
+
+  render() {
+    // 读取属性
+    // highlight-next-line
+    return <h1>Classes {this.size}</h1>
+  }
+}
+// https://zh-hans.react.dev/reference/react/Component#props
+```
+</TabItem>
+</Tabs>
+
+## 属性绑定
+
+JSX 是一种模板语言的最小实现，因为它允许你通过 JavaScript 来组织数据和逻辑。
+
+```tsx showLineNumbers
+export default function Profile() {
+  const other = {
+    name: 'Gregorio Y. Zara',
+    theme: {
+      backgroundColor: 'black',
+      color: 'pink'
+    }
+  };
+
+  return (
+    // 属性绑定
+    // 使用“引号”传递字符串
+    // 使用“大括号”传递 JavaScript 变量，大括号内的任何 JavaScript 表达式都能正常运行，包括函数
+    // 使用“双大括号”传递 JavaScript 对象
+    // highlight-next-line
+    <Avatar person="haha" size={50} other={other}  />
+  )
+}
+```
+
+- https://zh-hans.react.dev/learn/javascript-in-jsx-with-curly-braces#passing-strings-with-quotes
+- https://zh-hans.react.dev/learn/javascript-in-jsx-with-curly-braces#using-double-curlies-css-and-other-objects-in-jsx
+- https://zh-hans.react.dev/learn/javascript-in-jsx-with-curly-braces#where-to-use-curly-braces
+
+## 属性透传/传递
+
+- 展开语法 `{...props}`
+
+```tsx showLineNumbers
+export default function Profile(props) {
+  return (
+    // ES6 展开符 支持
+    // 将 Profile 所有的 props 转发给子组件 Avatar
+    // highlight-next-line
+    <Avatar {...props} />
+  )
+}
+```
+
+- https://zh-hans.react.dev/learn/passing-props-to-a-component#step-1-pass-props-to-the-child-component
+- https://zh-hans.react.dev/learn/passing-props-to-a-component#forwarding-props-with-the-jsx-spread-syntax
+
+:::tip
+
+跨层级透传组件属性请查看 [context](/share/docs/guide/interface-development/state-management/context)。
+
+:::
+
+## Children 属性
+
+当你将内容嵌套在 JSX 标签中时，父组件将在名为 `children` 的 prop 中接收到该内容。
+
+```tsx showLineNumbers
+function Card({ children }) {
+  return (
+    <div className="card">
+      {/* children 属性读取 */}
+      // highlight-next-line
+      {children}
+    </div>
+  );
+}
+
+export default function Profile() {
+  return (
+    <Card>
+      {/* children 属性 */}
+      <Avatar
+        size={100}
+        person={{ 
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2'
+        }}
+      />
+    </Card>
+  );
+}
+```
+
+![Image](/children.png)
+
+:::tip
+
+可以将带有 `children` prop 的组件看作有一个“洞”，可以由其父组件使用任意 JSX 来“填充”。
+
+:::
+
+- https://zh-hans.react.dev/learn/passing-props-to-a-component#passing-jsx-as-children
+- https://zh-hans.react.dev/reference/react/Children#alternatives
+
+## Render Props
+
+除了为每一个子项生成 JSX，你还可以传递一个返回值类型是 JSX 的函数，并且在必要的时候调用这个函数。
+
+```tsx showLineNumbers
+import { useState } from 'react';
+
+export default function TabSwitcher({ tabIds, getHeader, renderContent }) {
+  const [selectedId, setSelectedId] = useState(tabIds[0]);
+  return (
+    <>
+      {tabIds.map((tabId) => (
+        <button
+          key={tabId}
+          onClick={() => setSelectedId(tabId)}
+        >
+          {/* 渲染函数读取 */}
+          // highlight-next-line
+          {getHeader(tabId)}
+        </button>
+      ))}
+      <hr />
+      <div key={selectedId}>
+        {/* 渲染函数读取 */}
+        // highlight-next-line
+        <h3>{getHeader(selectedId)}</h3>
+        // highlight-next-line
+        {renderContent(selectedId)}
+      </div>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <TabSwitcher
+      tabIds={['first', 'second', 'third']}
+      {/* Render Props 渲染属性 */}
+      getHeader={tabId => {
+        return tabId[0].toUpperCase() + tabId.slice(1);
+      }}
+      {/* Render Props 渲染属性 */}
+      renderContent={tabId => {
+        return <p>This is the {tabId} item.</p>;
+      }}
+    />
+  );
+}
+```
+
+渲染属性是函数，所以你可以向它们传递参数。
+
+- https://zh-hans.react.dev/reference/react/Children#calling-a-render-prop-to-customize-rendering

@@ -1,0 +1,256 @@
+# 创建组件
+
+分类 | Hooks | Classes
+---|---|---
+创建 | [函数组件](https://zh-hans.react.dev/learn/your-first-component#defining-a-component) | [React.Component](https://zh-hans.react.dev/reference/react/Component#component) v0.13
+懒加载 | - | [React.lazy()](https://zh-hans.react.dev/reference/react/lazy) v16.6 <br/> [import()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/import) ES2020
+`\-加载状态` | [`<Suspense>`](https://zh-hans.react.dev/reference/react/Suspense) v18.0 | [`<React.Suspense>`](https://zh-hans.legacy.reactjs.org/docs/react-api.html#reactsuspense) v16.6
+`\-Transition` | [useTransition()](https://zh-hans.react.dev/reference/react/useTransition) v18.0 | [React.startTransition()](https://zh-hans.react.dev/reference/react/startTransition) v18.0
+`\-延迟更新` | [useDeferredValue()](https://zh-hans.react.dev/reference/react/useDeferredValue) v18.3 | -
+性能优化 | - | [React.PureComponent](https://zh-hans.react.dev/reference/react/PureComponent) v15.3
+`\-记忆渲染结果` | [useMemo()](https://zh-hans.react.dev/reference/react/useMemo) v16.8 | [React.memo()](https://zh-hans.react.dev/reference/react/memo#reference) v16.6
+`\-缓存函数` | [useCallback()](https://zh-hans.react.dev/reference/react/useCallback) v16.8 | -
+调试 | [useDebugValue()](https://zh-hans.react.dev/reference/react/useDebugValue) v18.0 | [static displayName](https://zh-hans.legacy.reactjs.org/docs/react-component.html#displayname)
+
+## 大纲
+
+- 组件
+  - 创建
+    - 函数式组件
+    - 类式组件
+  - 加载
+    - 懒加载组件
+      - 动态加载
+      - ~~异步组件~~
+    - 回退方案（加载状态）
+    - 延迟更新
+  - 性能优化
+    - 记忆渲染结果
+      - 纯组件
+    - 缓存函数
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## 定义组件
+
+- 函数组件
+- Component
+
+<Tabs groupId="create-component" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx
+export default function App() {
+  return (
+    <h1>Hooks</h1>
+  )
+}
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx
+import { Component } from 'react';
+
+class App extends Component {
+  render() {
+    return <h1>Classes</h1>
+  }
+}
+
+export default App;
+```
+</TabItem>
+</Tabs>
+
+:::tip
+
+React 组件是常规的 JavaScript 函数；函数式组件中，**组件的名称必须以大写字母开头**，否则它们将无法运行！
+
+没有括号包裹的话，任何在 `return` 下一行的代码都将被忽略！
+
+:::
+
+:::tip
+
+类式组件内部不支持 Hook 函数（以 `use` 开头的函数，例如：`useState`）.
+
+:::
+
+## 懒加载组件/异步动态组件
+
+- lazy()
+- import()
+- `<Suspense>`
+
+```tsx
+import { Suspense, lazy } from 'react';
+const WrapApp = lazy(() => import('../components/WrapApp') );
+
+export default function App() {
+  return (
+    <h1>Hooks</h1>
+
+    <Suspense fallback={<div>loading...</div>}>
+      <WrapApp />
+    </Suspense>
+  )
+}
+```
+
+### 体验优化
+
+对于已经展示给用户的内容来说，在切换回去时，展示加载指示器可能会让人困惑。有时，在准备新的 UI 时，展示 “旧” 的 UI 可能会更加友好。要做到这一点，你可以使用新的 transition API `startTransition` 和 `useTransition` 来将标记更新为 transitions，同时避免意外的兜底方案。
+
+- `<Suspense>`
+- `React.startTransition(() => setState())` 转换效果 将状态更新标记为非阻塞的 Transition（等待足够长的时间来避免隐藏已经显示的内容）
+- `useTransition()`： isPending, startTransition()
+- `useDeferredValue(stateValue)`
+
+```tsx
+import { useState, useTransition, Suspense, lazy } from 'react';
+
+const ClassesApp = lazy(() => delayForDemo(import('../classes')) );
+const HooksApp = lazy(() => delayForDemo(import('../hooks')) );
+
+function delayForDemo(promise: any) {
+  return new Promise(resolve => {
+    setTimeout(resolve, 2000);
+  }).then(() => promise);
+}
+
+const Tab = ({children, onClick}) => {
+    const [isPending, startTransition] = useTransition();
+
+    if (isPending) {
+        return <li style={{color: 'red'} }><b>{children}</b></li>
+    }
+    
+    return (
+        <li onClick={() => { startTransition(() => {
+            onClick();
+        })}}>{children}</li>
+    )
+}
+
+export default function Tabs() {
+    const [currentTab, setCurrentTab] = useState('ClassesApp');
+    const [tabs, setTabs] = useState(['ClassesApp', 'HooksApp']);
+  
+    return (
+        <div>
+            <Suspense fallback={<div>loading...</div>}>
+            <ul>
+                {tabs.map(tab => {
+                    return <Tab key={tab} onClick={() => setCurrentTab(tab)}>{tab}</Tab>
+                })}
+            </ul>
+            <div>
+                {currentTab === 'ClassesApp' && <ClassesApp />}
+                {currentTab === 'HooksApp' && <HooksApp />}
+            </div>
+            </Suspense>
+        </div>
+    )
+}
+```
+
+:::tip
+
+如果 Suspense 正在展示 React 组件树中的内容，那么当再次被挂起时，除非导致此处更新是由 `startTransition` 或 `useDeferredValue` 引起，否则 Suspense 将展示 fallback。
+
+:::
+
+## 性能优化
+
+当父组件重新渲染时，React 通常会重新渲染子组件。为了优化性能，你可以创建一个组件，在父组件重新渲染时不会重新渲染，前提是新的 props 和 state 与旧的 props 和 state 相同。
+
+- memo()
+- PureComponent
+- shouldComponentUpdate()
+
+### 记忆渲染结果 & “纯”组件
+
+React 组件应该始终具有 纯粹的渲染逻辑。这意味着如果 props、state 和 context 没有发生变化，它必须返回相同的输出。使用 PureComponent 便是在告诉 React 你的组件符合这个要求，因此只要 props 和 state 没有改变，React 就不需要重新渲染组件。然而，如果你的组件正在使用的 context 发生变化，它仍会重新渲染。
+
+<Tabs groupId="create-component" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx
+import { memo, useState } from 'react';
+
+const Greeting = memo(function Greeting({ name }) {
+  console.log("Greeting was rendered at", new Date().toLocaleTimeString());
+  return <h3>Hello{name && ', '}{name}!</h3>;
+});
+
+export default function App() {
+  const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
+  return (
+    <>
+      <label>
+        Name{': '}
+        <input value={name} onChange={e => setName(e.target.value)} />
+      </label>
+      <label>
+        Address{': '}
+        <input value={address} onChange={e => setAddress(e.target.value)} />
+      </label>
+      <Greeting name={name} />
+    </>
+  );
+}
+
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx
+import { PureComponent, useState } from 'react';
+
+class Greeting extends PureComponent {
+  render() {
+    console.log("Greeting was rendered at", new Date().toLocaleTimeString());
+    return <h3>Hello{this.props.name && ', '}{this.props.name}!</h3>;
+  }
+}
+
+export default function App() {
+  const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
+
+  return (
+    <>
+      <label>
+        Name{': '}
+        <input value={name} onChange={e => setName(e.target.value)} />
+      </label>
+      <label>
+        Address{': '}
+        <input value={address} onChange={e => setAddress(e.target.value)} />
+      </label>
+      <Greeting name={name} />
+    </>
+  );
+}
+
+```
+</TabItem>
+</Tabs>
+
+:::tip
+
+继承 `PureComponent` 的子类相当与定义了一个自定义的 `shouldComponentUpdate` 方法，该方法将浅比较 props 和 state。
+
+:::
+
+:::tip
+
+`memo` 通过记忆组件渲染结果的方式来提高组件的性能表现。这意味着在这种情况下，React 将跳过渲染组件的操作并直接复用最近一次渲染的结果。
+
+`memo` 仅检查 props 变更。如果函数组件被 `memo` 包裹，且其实现中拥有 `useState`，`useReducer` 或 `useContext` 的 Hook，当 state 或 context 发生变化时，它仍会重新渲染。
+
+与 `PureComponent` 不同，`memo` 不会比较新旧 state。在函数组件中，即使没有 `memo`，调用具有相同 state 的 set 函数，默认已经阻止了重新渲染。
+
+默认情况下其只会对复杂对象做浅层对比，如果你想要控制对比过程，那么请将自定义的比较函数通过第二个参数传入来实现。
+
+与 class 组件中 `shouldComponentUpdate()` 方法不同的是，如果 props 相等，`memo` 的第二个参数 areEqual 会返回 true；如果 props 不相等，则返回 false。这与 `shouldComponentUpdate` 方法的返回值相反。
+:::

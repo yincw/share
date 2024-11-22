@@ -1,0 +1,23 @@
+# 其他
+
+- 通用函数工具集 API
+  - html2canvas
+  - crypto-js
+  - bcryptjs
+  - moment
+  - day.js
+  - date-fns
+  - Excel 导出
+    - xlsx
+      - https://sheetjs.com/
+  - 图片预览
+    - https://fengyuanchen.github.io/viewerjs/
+    - react-viewer
+      - https://www.npmjs.com/package/react-viewer
+  - 文档预览
+    - https://viewerjs.org/
+    - https://mozilla.github.io/pdf.js/
+      - https://github.com/mozilla/pdf.js
+      - https://gitcode.gitcode.host/docs-cn/pdf.js-docs-cn/index.html
+      - https://zhuanlan.zhihu.com/p/653490488
+      - https://blog.csdn.net/IAIPython/article/details/134525898

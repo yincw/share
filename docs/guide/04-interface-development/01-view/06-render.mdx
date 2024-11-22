@@ -1,0 +1,201 @@
+# 组件渲染
+
+分类 | Hooks | Classes
+---|---|---
+JSX | [`<Fragment>` / `<></>`](https://zh-hans.react.dev/reference/react/Fragment) v16.2 | [React.Children](https://zh-hans.react.dev/reference/react/Children) v0.13 <br/> [`key`](https://zh-hans.react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key) v0.13
+`\-` | - | [`htmlFor`](https://zh-hans.react.dev/reference/react-dom/components/common#common-props) v0.13
+`\-` | - | [`classname`](https://zh-hans.react.dev/reference/react-dom/components/common#applying-css-styles) v0.13
+`\-` | - | [`dangerouslySetInnerHTML`](https://zh-hans.react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html) v0.13
+渲染函数 | - | [createElement(type, props, ...children)](https://zh-hans.react.dev/reference/react/createElement) v0.13
+`\-` | - | [~~createFactory(type)~~](https://zh-hans.react.dev/reference/react/createFactory) v0.13
+`\-` | - | [cloneElement(element, props, ...children)](https://zh-hans.react.dev/reference/react/cloneElement) v0.13
+`\-` | - | [React.isValidElement()](https://zh-hans.react.dev/reference/react/isValidElement) v0.13
+强制重新渲染 | [useSyncExternalStore()](https://zh-hans.react.dev/reference/react/useSyncExternalStore) v18 | [forceUpdate()](https://zh-hans.react.dev/reference/react/Component#forceupdate) v0.13
+服务端渲染 | [hydrateRoot()](https://zh-hans.react.dev/reference/react-dom/client/hydrateRoot) v18.0 | [ReactDOM.hydrate()](https://zh-hans.legacy.reactjs.org/docs/react-dom.html#hydrate) v0.13
+`\-` | - | ReactDOM.renderToString() v0.13 <br/> [renderToString(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToString) v18.0
+`\-` | - | ReactDOM.renderToStaticMarkup() v0.13 <br/> [renderToStaticMarkup(reactNode, options?) ](https://zh-hans.react.dev/reference/react-dom/server/renderToStaticMarkup) v18.0
+`\-Node.js Streams` | - | [renderToPipeableStream(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToPipeableStream) v18.0
+`\-` | - | [renderToStaticNodeStream(reactNode, options?) ](https://zh-hans.react.dev/reference/react-dom/server/renderToStaticNodeStream) v18.0
+`\-` | - | ~~ReactDOM.renderToNodeStream()~~ v0.13 <br/> [~~renderToNodeStream(reactNode, options?)~~](https://zh-hans.react.dev/reference/react-dom/server/renderToNodeStream) v18.0
+`\-Web Streams` | - | [renderToReadableStream(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToReadableStream) v18.0
+`\-` | [`<meta>`](https://zh-hans.react.dev/reference/react-dom/components/meta) | - 
+`\-` | [`<title>`](https://zh-hans.react.dev/reference/react-dom/components/title) | - 
+`\-` | [`<script>`](https://zh-hans.react.dev/reference/react-dom/components/script) | - 
+
+## 大纲
+
+- ~~模板~~
+  - 指令
+    - 自定义指令
+    - 指令参数及修饰符
+    - 注册指令
+  - 插槽
+    - 内容和出口
+- JSX
+  - 条件渲染
+  - 列表渲染
+  - 显示隐藏
+  - 文本渲染
+  - HTML 渲染
+  - ~~其他~~
+    - 跳过编译
+    - 隐藏未编译的插值
+    - 只渲染一次
+    - 缓存模板
+- 渲染函数
+- 强制重新渲染
+- 服务端渲染
+- 自定义渲染
+  - 原生渲染
+  - 测试渲染
+- 渲染原理
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## JSX
+
+- https://zh-hans.react.dev/learn/writing-markup-with-jsx
+- https://zh-hans.legacy.reactjs.org/docs/introducing-jsx.html
+- https://zh-hans.legacy.reactjs.org/docs/jsx-in-depth.html
+
+### 条件渲染
+
+- `&&` 与运算符
+- `? :` 三目运算符
+- `null`
+
+```tsx
+
+// https://zh-hans.react.dev/learn/conditional-rendering
+// https://zh-hans.legacy.reactjs.org/docs/conditional-rendering.html
+```
+
+### 列表渲染
+
+- key
+- `<Fragment>` / `<></>`
+- children
+
+```tsx
+
+// https://zh-hans.react.dev/learn/rendering-lists
+// https://zh-hans.react.dev/reference/react/Fragment
+// https://zh-hans.legacy.reactjs.org/docs/lists-and-keys.html
+// https://zh-hans.legacy.reactjs.org/docs/fragments.html
+```
+
+### 显示隐藏
+
+- classname
+- 表单属性
+  - htmlFor
+  - defaultValue
+
+```tsx
+// https://zh-hans.react.dev/reference/react-dom/components/common#applying-css-styles
+// https://zh-hans.react.dev/reference/react-dom/components/common#manipulating-a-dom-node-with-a-ref
+// https://zh-hans.react.dev/learn/writing-markup-with-jsx#the-rules-of-jsx
+// https://zh-hans.legacy.reactjs.org/docs/faq-styling.html
+```
+
+### 文本渲染
+
+- `{}`
+
+
+```tsx
+
+// https://zh-hans.react.dev/learn/javascript-in-jsx-with-curly-braces#using-curly-braces-a-window-into-the-javascript-world
+// https://zh-hans.legacy.reactjs.org/docs/introducing-jsx.html
+// https://zh-hans.legacy.reactjs.org/docs/faq-build.html
+```
+
+### HTML渲染
+
+- `dangerouslySetInnerHTML={{__html: HTML }}`
+
+```tsx
+// https://zh-hans.react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html
+// https://zh-hans.legacy.reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml
+```
+
+## 渲染函数
+
+- createElement()
+- createFactory()
+- cloneElement()
+- React.isValidElement()
+
+```tsx
+// https://zh-hans.react.dev/reference/react/createElement#reference
+  // https://zh-hans.react.dev/reference/react/createFactory
+  // https://zh-hans.react.dev/reference/react/cloneElement
+// https://zh-hans.react.dev/reference/react/isValidElement
+// https://zh-hans.legacy.reactjs.org/docs/react-without-jsx.html
+```
+
+## 强制重新渲染
+
+- useSyncExternalStore()
+  - forceUpdate()
+  - useReducer() + 递增
+
+<Tabs groupId="render" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx
+// https://zh-hans.react.dev/reference/react/useSyncExternalStore
+// https://zh-hans.react.dev/reference/react/Component#forceupdate
+// https://zh-hans.legacy.reactjs.org/docs/hooks-faq.html#is-there-something-like-forceupdate
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx
+
+```
+</TabItem>
+</Tabs>
+
+## 服务端渲染
+
+- hydrateRoot()
+  - ReactDOM.hydrate()
+- renderToString()
+  - ReactDOM.renderToString()
+- renderToStaticMarkup()
+  - ReactDOM.renderToStaticMarkup()
+- renderToPipeableStream()
+- renderToStaticNodeStream()
+- renderToReadableStream()
+
+```tsx
+// https://zh-hans.react.dev/reference/react-dom/server
+// https://zh-hans.legacy.reactjs.org/docs/react-dom-client.html
+// https://zh-hans.legacy.reactjs.org/docs/react-dom-server.html
+```
+
+## 自定义渲染
+
+- React Testing Library
+- @testing-library/react 
+- @testing-library/react-native
+- https://zh-hans.react.dev/reference/react/act
+- https://zh-hans.legacy.reactjs.org/docs/codebase-overview.html#renderers
+- https://zh-hans.react.dev/blog/2024/04/25/react-19-upgrade-guide#deprecated-react-test-renderer
+
+## 渲染原理
+
+初次渲染：
+
+![Image](/interactivity1.png)
+
+状态更新时重新渲染：
+
+![Image](/interactivity2.png)
+
+浏览器渲染（browser rendering）/ 绘制（painting）：
+
+![Image](/interactivity3.png)
+
+- https://zh-hans.react.dev/learn/render-and-commit
+- https://zh-hans.legacy.reactjs.org/docs/codebase-overview.html#reconcilers

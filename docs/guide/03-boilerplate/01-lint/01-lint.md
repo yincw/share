@@ -8,3 +8,4 @@
   - husky
   - commitlint
 - https://umijs.org/docs/guides/lint
+- https://lq782655835.github.io/blogs/team-standard/0.standard-ai-summary.html

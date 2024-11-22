@@ -1,0 +1,52 @@
+# 应用入口
+
+分类 | v18+ | v18-
+---|---|---
+客户端渲染 | [createRoot()](https://zh-hans.react.dev/reference/react-dom/client/createRoot) v18.0 | [ReactDOM.render()](https://zh-hans.legacy.reactjs.org/docs/react-dom.html#render) v0.13
+`\-` | [root.render(reactNode)](https://zh-hans.react.dev/reference/react-dom/client/createRoot#root-render) v18.0 | 同上
+`\-` | [root.unmount()](https://zh-hans.react.dev/reference/react-dom/client/createRoot#root-unmount) v18.0 | [ReactDOM.unmountComponentAtNode()](https://zh-hans.legacy.reactjs.org/docs/react-dom.html#unmountcomponentatnode) v0.13
+
+## 入口配置
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="v18+" label="v18+" default>
+
+```tsx
+import { createRoot } from 'react-dom/client';
+import App from './App.js';
+
+// 在浏览器 DOM 元素中创建根节点显示内容
+const root = createRoot(document.getElementById('root'));
+
+// 将一段 JSX（“React 节点”）在 React 的根节点中渲染为 DOM 节点并显示
+root.render(<App />);
+
+// 销毁 React 根节点中的一个已经渲染的树
+// 通常不需要
+// root.unmount();
+```
+
+</TabItem>
+<TabItem value="v18-" label="v18-">
+
+```tsx
+import { render, unmountComponentAtNode } from 'react-dom'
+import App from './App.js';
+
+// 在浏览器 DOM 元素中创建根节点显示内容
+// 将一段 JSX（“React 节点”）在 React 的根节点中渲染为 DOM 节点并显示
+render(<App />, document.getElementById('root'));
+
+// 销毁 React 根节点中的一个已经渲染的树
+// 通常不需要
+// unmountComponentAtNode(document.getElementById('root'));
+```
+
+</TabItem>
+</Tabs>
+
+- https://zh-hans.react.dev/reference/react-dom#deprecated-apis
+- https://zh-hans.legacy.reactjs.org/docs/rendering-elements.html

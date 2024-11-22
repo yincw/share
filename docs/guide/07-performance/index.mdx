@@ -1,0 +1,150 @@
+# 性能优化
+
+分类 | Hooks | Classes
+---|---|---
+性能分析 | [`<Profiler>`](https://zh-hans.react.dev/reference/react/Profiler) v16.9 | -
+懒加载 | - | [React.lazy()](https://zh-hans.react.dev/reference/react/lazy) v16.6 <br/> [import()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/import) ES2020
+记忆和缓存 | - | [React.PureComponent](https://zh-hans.react.dev/reference/react/PureComponent) v15.3
+`\-记忆渲染结果` | [useMemo()](https://zh-hans.react.dev/reference/react/useMemo) v16.8 | [React.memo()](https://zh-hans.react.dev/reference/react/memo#reference) v16.6
+`\-缓存函数` | [useCallback()](https://zh-hans.react.dev/reference/react/useCallback) v16.8 | -
+`\-` | - | [`key`](https://zh-hans.react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key) v0.13
+延迟更新 | [useTransition()](https://zh-hans.react.dev/reference/react/useTransition) v18.0 | [React.startTransition()](https://zh-hans.react.dev/reference/react/startTransition) v18.0
+`\-` | [useDeferredValue()](https://zh-hans.react.dev/reference/react/useDeferredValue) v18.3 | -
+Effect 事件分离 | [useEffectEvent()](https://zh-hans.react.dev/learn/escape-hatches#separating-events-from-effects) | -
+React 编译器 | [React Compiler](https://zh-hans.react.dev/learn/react-compiler) | -
+
+## 大纲
+
+- 性能优化
+  - 分析
+  - 策略设计
+    - 逻辑优化
+    - 资源优化
+      - 大小/质量
+    - 资源加载
+      - 预加载
+      - 懒加载
+      - 浏览器缓存
+    - 网络分发
+      - Gzip 传输
+      - CDN 分发
+  - 优化
+    - React 源码优化
+      - 逻辑优化
+      - 资源优化
+      - 资源加载
+      - 网络分发
+    - Webpack 打包优化
+      - 逻辑优化
+      - 资源优化
+      - 资源加载
+      - 网络分发
+  - 监控
+    - 统计分析
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## 性能分析
+
+- 浏览器：Profiler
+- React：`<Profiler>`
+- Webpack：webpack-bundle-analyzer
+
+参考
+
+- https://zh-hans.legacy.reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html
+- https://zh-hans.react.dev/reference/react/Profiler
+- https://zh-hans.legacy.reactjs.org/docs/profiler.html
+- https://umijs.org/docs/guides/env-variables#analyze
+
+## 策略设计
+
+- 逻辑优化
+- 资源优化
+  - 大小/质量
+- 资源加载
+  - 预加载
+  - 懒加载
+  - 浏览器缓存
+- 网络分发
+  - Gzip 传输
+  - CDN 分发
+
+## 优化
+
+- React 源码优化
+  - 逻辑优化
+    - 记忆和缓存: 记忆计算结果和缓存函数定义
+      - React.PureComponent
+        - shouldComponentUpdate()
+      - useMemo()
+        - React.memo()
+      - useCallback()
+      - `key`
+    - 延迟更新
+      - useTransition()
+        - React.startTransition()
+      - useDeferredValue()
+    - Effect 事件分离
+      - useEffectEvent()
+    - React 编译器自动优化
+      - React Compiler
+    - 其他
+      - 适时销毁自定义事件、定时任务、业务对象
+      - “虚拟滚动”技术
+        - 这项技术会在有限的时间内仅渲染有限的内容，并奇迹般地降低重新渲染组件消耗的时间，以及创建 DOM 节点的数量
+      - 时间分片，上传/下载
+      - 多线程技术：web worker
+      - 使用业务支持的较新的 API
+      - 使用 GPU 加速
+      - 优化算法复杂度
+  - 资源优化
+  - 资源加载
+    - 懒加载
+      - React.lazy()
+      - import()
+  - 网络分发
+- Webpack 打包优化
+  - 逻辑优化
+    - 代码拆分 code-splitting
+    - trumk 大小限制
+  - 资源优化
+    - 摇树 Tree-Sharking
+    - 压缩 Terser
+    - 混淆
+  - 资源加载
+    - 预加载 Prefetch
+      - DllPlugin 通用模块提取
+      - ProvidePlugin 全局提供
+    - 懒加载/按需加载
+    - 请求合并
+      - 雪碧图 Sprite
+    - 浏览器缓存
+      - 文件指纹 Hashed
+  - 网络分发
+
+<Tabs>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx
+
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx
+
+```
+</TabItem>
+</Tabs>
+
+参考
+
+- https://umijs.org/blog/code-splitting
+- https://zh-hans.legacy.reactjs.org/docs/optimizing-performance.html
+- https://zh-hans.legacy.reactjs.org/docs/hooks-faq.html#how-to-memoize-calculations
+- https://babeljs.io/docs/babel-plugin-transform-class-properties/
+
+## 监控
+
+- 统计分析
+

@@ -1,0 +1,175 @@
+# 组件状态
+
+分类 | Hooks | Classes
+---|---|---
+声明 | [useState()](https://zh-hans.react.dev/reference/react/useState) v16.8 | [state](https://zh-hans.react.dev/reference/react/Component#state) ES2022
+读取 | - | [this.state](https://zh-hans.react.dev/reference/react/Component#state) v0.13
+更新 | [set](https://zh-hans.react.dev/reference/react/useState#setstate) v16.8 | [this.setState(nextState, callback?)](https://zh-hans.react.dev/reference/react/Component#setstate) v0.13
+`\-` | [useReducer()](https://zh-hans.react.dev/reference/react/useReducer) v16.8 | -
+`\-表单动作` | [useActionState()](https://zh-hans.react.dev/reference/react/useActionState) v18.3 | - 
+监听 | [useEffect()](https://zh-hans.react.dev/reference/react/useEffect) v16.8 | -
+`\-` | [useLayoutEffect()](https://zh-hans.react.dev/reference/react/useLayoutEffect) v16.8 | -
+`\-` | [useEffectEvent()](https://zh-hans.react.dev/learn/escape-hatches#separating-events-from-effects) | -
+`\-CSS-in-JS` | [useInsertionEffect()](https://zh-hans.react.dev/reference/react/useInsertionEffect) v18.0 | -
+
+## 大纲
+
+- 状态
+  - 声明
+    - 初始值
+      - 默认值来源
+      - 初始化函数-避免重复创建初始状态
+  - 读取
+  - 更新
+    - 派生状态/计算
+    - 更新后立即获取
+      - setState(() => {})
+      - 保存变量中
+    - 状态变更立即更新 DOM
+    - 更新状态中的对象和数组
+      - 不可变数据，替换
+      - 扩展符 ...
+    - 性能优化
+      - 避免重复创建初始状态
+      - 使用 key 重置状态
+      - 存储前一次渲染的信息
+  - 监听
+    - 异步监听
+    - 同步监听
+    - 深度监听和立即执行
+    - 监听依赖自动收集
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## 状态声明
+
+- useState()
+  - `constructor()`
+  - `state`
+
+<Tabs groupId="state" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx showLineNumbers
+// https://zh-hans.react.dev/reference/react/Component#migrating-a-component-with-state-from-a-class-to-a-function
+// https://zh-hans.react.dev/learn/state-a-components-memory
+// https://zh-hans.react.dev/learn/state-as-a-snapshot
+// https://zh-hans.react.dev/learn/queueing-a-series-of-state-updates
+// https://zh-hans.react.dev/learn/reacting-to-input-with-state
+// https://zh-hans.react.dev/learn/preserving-and-resetting-state
+
+// https://zh-hans.legacy.reactjs.org/docs/faq-state.html
+
+// https://zh-hans.react.dev/learn/updating-objects-in-state
+// https://zh-hans.react.dev/learn/updating-arrays-in-state
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx showLineNumbers
+
+// https://zh-hans.react.dev/reference/react/Component#adding-state-to-a-class-component
+```
+</TabItem>
+</Tabs>
+
+## 状态读取
+
+- [state]
+  - `this.state`
+
+<Tabs groupId="state" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx showLineNumbers
+
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx showLineNumbers
+
+```
+</TabItem>
+</Tabs>
+
+## 状态更新
+
+- [setState]
+  - `this.setState()`
+
+<Tabs groupId="state" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx showLineNumbers
+
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx showLineNumbers
+
+```
+</TabItem>
+</Tabs>
+
+### 派生状态（计算）
+
+- useReducer()
+  - `static getDerivedStateFromProps()`
+
+你正设置的状态是从某个其他状态变量的先前状态计算出的，则你可能希望将它们结合成一个对象然后 使用 reducer。
+
+<Tabs groupId="state" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx showLineNumbers
+// https://zh-hans.react.dev/learn/extracting-state-logic-into-a-reducer
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx showLineNumbers
+
+```
+</TabItem>
+</Tabs>
+
+### 状态变更快照
+
+设置 state 会触发渲染，渲染会及时生成一张快照：
+你从该函数返回的 JSX 就像是在某个时间点上 UI 的快照。它的 props、事件处理函数和内部变量都是 根据当前渲染时的 state 被计算出来的。
+
+![Image](/stateSnapshot1.png)
+
+state 实际上“活”在 React 本身中——就像被摆在一个架子上！——位于你的函数之外。当 React 调用你的组件时，它会为特定的那一次渲染提供一张 state 快照。你的组件会在其 JSX 中返回一张包含一整套新的 props 和事件处理函数的 UI 快照 ，其中所有的值都是 根据那一次渲染中 state 的值 被计算出来的！
+
+![Image](/stateSnapshot2.png)
+
+React 会对 state 更新进行批处理：
+
+> React 会等到事件处理函数中的 所有 代码都运行完毕再处理你的 state 更新。
+>
+> 这让你可以更新多个 state 变量——甚至来自多个组件的 state 变量——而不会触发太多的 重新渲染。但这也意味着只有在你的事件处理函数及其中任何代码执行完成 之后，UI 才会更新。这种特性也就是 **批处理**，它会使你的 React 应用运行得更快。
+
+![Image](/stateSnapshot3.png)
+
+## 状态监听
+
+- useEffect()
+  - `componentDidMount()`
+  - `componentDidUpdate()`
+  - `componentWillUnmount()`
+- useLayoutEffect()
+- useInsertionEffect()
+  - `getSnapshotBeforeUpdate()`
+
+<Tabs groupId="state" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx showLineNumbers
+
+// https://zh-hans.react.dev/learn/synchronizing-with-effects
+// https://zh-hans.react.dev/learn/you-might-not-need-an-effect
+// https://zh-hans.react.dev/learn/lifecycle-of-reactive-effects
+// https://zh-hans.react.dev/learn/removing-effect-dependencies
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx showLineNumbers
+
+```
+</TabItem>
+</Tabs>

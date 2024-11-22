@@ -1,0 +1,51 @@
+# JavaScript
+
+- 模块化
+  - 动态加载
+- 函数
+- 类
+  - 原型
+  - 装饰器
+- 数据结构
+  - 对象
+  - 数组
+- 事件
+  - 事件循环
+  - DOM 事件模型
+  - 事件代理
+- 表单
+  - 控件
+  - 绑定
+- 错误
+  - 捕获
+  - 内存泄漏
+- 编程范式
+  - 函数式编程
+    - 纯函数
+  - 面向对象编程
+  - 面向切面编程（AOP） 切面逻辑
+    - 生命周期钩子函数
+    - 高阶组件
+    - 装饰器
+- 
+- 浏览器渲染原理
+  - DOM 树
+  - CSSOM 树
+  - render 树
+  - 布局（layout）
+    - 重排（reflow）/回流
+  - 绘制（painting）
+    - 重绘（repaint）
+    - https://juejin.cn/post/7229698783645351996
+    - https://juejin.cn/post/6844903569087266823
+    - https://juejin.cn/post/6844903656836317198
+- 响应式
+  - 虚拟 DOM & Diff 算法
+  - 协调
+- 
+
+- https://blog.csdn.net/MakeGay/article/details/129378653
+- https://blog.csdn.net/helloworld1024fd/article/details/127319951
+- https://blog.csdn.net/ChenXiaoTemp/article/details/48733273
+- https://blog.csdn.net/Greenary/article/details/123166879
+- https://lanan.blog.csdn.net/article/details/125583719

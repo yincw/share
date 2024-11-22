@@ -1,0 +1,45 @@
+# 异常处理
+
+分类 | Hooks | Classes
+---|---|---
+属性类型检查 | TypeScript | [static propTypes](https://zh-hans.react.dev/reference/react/Component#static-proptypes) v0.13/ES2022
+错误边界 | [react-error-boundary](https://github.com/bvaughn/react-error-boundary) | [static getDerivedStateFromError(error)](https://zh-hans.react.dev/reference/react/Component#static-getderivedstatefromerror) v16.6
+`\-` | - | [componentDidCatch(error, info)](https://zh-hans.react.dev/reference/react/Component#componentdidcatch) v16.0
+严格模式 | [`<StrictMode>`](https://zh-hans.react.dev/reference/react/StrictMode) v16.3 | -
+
+- 类型检查
+  - static propTypes
+  - .propTypes
+- 错误边界
+  - static getDerivedStateFromError(error)
+  - componentDidCatch(error, info)
+    - react-error-boundary
+- 严格模式
+  - `<StrictMode>`
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="Hooks" label="Hooks" default>
+
+```tsx
+
+```
+
+</TabItem>
+<TabItem value="Classes" label="Classes">
+
+```tsx
+
+```
+
+</TabItem>
+</Tabs>
+
+## 参考
+
+- https://zh-hans.legacy.reactjs.org/docs/error-boundaries.html
+- https://zh-hans.legacy.reactjs.org/docs/static-type-checking.html
+- https://zh-hans.legacy.reactjs.org/docs/strict-mode.html
+- https://zh-hans.legacy.reactjs.org/docs/typechecking-with-proptypes.html

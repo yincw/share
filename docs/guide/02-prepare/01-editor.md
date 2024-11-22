@@ -7,4 +7,5 @@
   - ESLint
   - Stylelint
 
+- https://zh-hans.react.dev/learn/editor-setup
 - https://umijs.org/docs/guides/prepare

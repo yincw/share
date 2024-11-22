@@ -83,15 +83,20 @@ const config: Config = {
           label: '教程', position: 'left'},
         {
           type: 'docSidebar',
-          sidebarId: 'componentsSidebar',
-          // to: '/components', 
-          label: '组件库', position: 'left'},
-        {
-          type: 'docSidebar',
           sidebarId: 'apiSidebar',
           // to: '/api', 
-          label: 'API', position: 'left'},
-        {
+          label: 'API 参考', position: 'left'},
+          {
+            type: 'docSidebar',
+            sidebarId: 'componentsSidebar',
+            // to: '/components', 
+            label: '组件库', position: 'left'},
+          {
+            type: 'docSidebar',
+            sidebarId: 'basicSidebar',
+            // to: '/faq', 
+            label: '前端基石', position: 'left'},
+          {
           type: 'docSidebar',
           sidebarId: 'faqSidebar',
           // to: '/faq', 
@@ -163,48 +168,82 @@ const config: Config = {
               label: 'Vue 教程',
               href: 'https://yincw.github.io/vue-notes/guide/00-intro/',
             },
-            {
-              label: 'JavaScript 教程',
-              href: 'https://vikexia.com/JavaScript/Data_Structures?type=Object',
-            },
+            // {
+            //   label: 'AngularJS 教程',
+            //   href: 'https://yincw.github.io/',
+            // },
+            // {
+            //   label: 'Flutter 教程',
+            //   href: 'https://yincw.github.io/',
+            // },
           ],
         },
         {
-          title: 'API',
+          title: 'API 参考',
           items: [
             {
               label: 'React',
               to: '/share/docs/api/web/react/',
             },
             {
-              label: 'Taro',
-              to: '/share/docs/api/miniprogram/',
+              label: 'Vue',
+              href: 'https://yincw.github.io/vue-notes/api/01-vue/',
             },
+            // {
+            //   label: 'Taro',
+            //   to: '/share/docs/api/miniprogram/',
+            // },
+            // {
+            //   label: 'React Native',
+            //   to: '/share/docs/api/app/',
+            // },
+            // {
+            //   label: 'Electron',
+            //   to: '/share/docs/api/desktop/',
+            // },
             {
-              label: 'React Native',
-              to: '/share/docs/api/app/',
+              label: 'JavaScript',
+              href: 'https://vikexia.com/JavaScript/Data_Structures?type=Object',
             },
-            {
-              label: 'Electron',
-              to: '/share/docs/api/desktop/',
-            },
+            // {
+            //   label: 'TypeScript',
+            //   to: '/share/docs/api/language/typescript/',
+            // },
           ],
         },
         {
-          title: '开源库',
+          title: '开源',
           items: [
             {
+              // JavaScript 工具集
               label: 'Dora',
               href: 'https://yincw.github.io/dora/',
             },
             {
+              // CSS 工具集
               label: 'Rework',
               href: 'https://yincw.github.io/rework/',
             },
             {
+              // CSS/JS UI 库
               label: 'Anole UI',
               href: 'https://yincw.github.io/anole-ui/',
             },
+            // {
+            //   // Fetch 请求库
+            //   label: 'httpUtil',
+            //   href: 'https://yincw.github.io/',
+            // },
+            // {
+            //   // React 动态表单
+            //   label: 'xform',
+            //   href: 'https://yincw.github.io/',
+            // },
+            // {
+            //   // React 后台管理示例
+            //   label: 'admin-example',
+            //   href: 'https://yincw.github.io/',
+            // },
           ],
         },
         {
@@ -213,6 +252,18 @@ const config: Config = {
             {
               label: '前后端交互规范',
               href: 'https://yincw.github.io/api/',
+            },
+            {
+              label: '微课侠',
+              href: 'https://vikexia.com/urls',
+            },
+            {
+              label: '前端可视化开发平台',
+              href: 'https://yincw.github.io/vd/',
+            },
+            {
+              label: 'TypeDoc',
+              href: 'https://yincw.github.io/dora/',
             },
             {
               label: 'Docusaurus',
@@ -225,14 +276,6 @@ const config: Config = {
             {
               label: 'VitePress',
               href: 'https://yincw.github.io/',
-            },
-            {
-              label: 'TypeDoc',
-              href: 'https://github.com/yincw/dora/',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/yincw',
             },
           ],
         },

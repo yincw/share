@@ -1,0 +1,129 @@
+# 组件上下文
+
+分类 | Hooks | Classes
+---|---|---
+创建 | [React.createContext()](https://zh-hans.react.dev/reference/react/createContext) v16.3 | [~~static childContextTypes~~](https://zh-hans.react.dev/reference/react/Component#static-childcontexttypes) v0.12/ES2022 <br/> [~~getChildContext()~~](https://zh-hans.react.dev/reference/react/Component#getchildcontext) v0.12
+提供 | [`<SomeContext.Provider>`](https://zh-hans.react.dev/reference/react/createContext#provider) v16.3 | [static contextType](https://zh-hans.react.dev/reference/react/Component#static-contexttype) v16.3/ES2022 <br/> [~~static contextTypes~~](https://zh-hans.react.dev/reference/react/Component#static-contexttypes) v0.12/ES2022 
+读取和订阅 | [useContext()](https://zh-hans.react.dev/reference/react/useContext) v16.8 <br/> [`<SomeContext.Consumer>`](https://zh-hans.react.dev/reference/react/createContext#consumer) v16.3 | [this.context](https://zh-hans.react.dev/reference/react/Component#context) v0.12
+调试 | - | [Context.displayName](https://zh-hans.legacy.reactjs.org/docs/context.html#contextdisplayname)
+
+## 大纲
+
+- 上下文
+  - 使用场景
+  - 创建
+  - 提供
+  - 读取和订阅
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## 场景问题
+
+当你需要在组件树中深层传递参数以及需要在组件间复用相同的参数时，传递 props 就会变得很麻烦。最近的根节点父组件可能离需要数据的组件很远，状态提升 到太高的层级会导致 “逐层传递 props” 的情况。
+
+![Image](/context1.png)
+
+Context 可以让父节点，甚至是很远的父节点都可以为其内部的整个组件树提供数据。
+
+![Image](/context2.png)
+
+### 使用场景
+
+- 主题 theme
+- 当前账户 userData
+- 当前路由 active
+- 状态管理
+  - 全局状态/缓存数据 store
+  - 地区偏好/首选语言 locale
+
+Context 主要应用场景在于很多不同层级的组件需要访问同样一些的数据。请谨慎使用，因为这会使得组件的复用性变差。
+
+如果你只是想避免层层传递一些属性，组件组合（`component composition`）有时候是一个比 context 更好的解决方案。
+
+如果子组件需要在渲染前和父组件进行一些交流，你可以进一步使用 `render props`。
+
+- https://zh-hans.react.dev/learn/passing-data-deeply-with-context#use-cases-for-context
+- https://zh-hans.legacy.reactjs.org/docs/context.html#before-you-use-context
+
+## 创建上下文
+
+- createContext(defaultValue)
+  - ~~static childContextTypes~~
+  - ~~getChildContext()~~
+
+只有当组件所处的树中没有匹配到 Provider 时，其 defaultValue 参数才会生效。
+
+<Tabs groupId="context" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx
+
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx
+
+```
+</TabItem>
+</Tabs>
+
+- https://zh-hans.react.dev/learn/passing-data-deeply-with-context
+- https://zh-hans.react.dev/learn/scaling-up-with-reducer-and-context
+- https://zh-hans.react.dev/reference/react/createContext
+- https://zh-hans.legacy.reactjs.org/docs/context.html#reactcreatecontext
+- https://zh-hans.legacy.reactjs.org/docs/legacy-context.html#how-to-use-context
+
+## 提供上下文
+
+- `<SomeContext.Provider>`
+- static contextType
+  - ~~static contextTypes~~
+
+多个 Provider 也可以嵌套使用，里层的会覆盖外层的数据。
+
+当 Provider 的 `value` 值发生变化时，它内部的所有消费组件都会重新渲染。从 Provider 到其内部 consumer 组件（包括 `.contextType` 和 `useContext`）的传播不受制于 `shouldComponentUpdate` 函数，因此当 consumer 组件在其祖先组件跳过更新的情况下也能更新。
+
+挂载在 class 上的 `contextType` 属性可以让你使用 `this.context` 来获取最近 Context 上的值。你可以在任何生命周期中访问到它，包括 render 函数中。
+
+<Tabs groupId="context" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx
+
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx
+
+```
+</TabItem>
+</Tabs>
+
+- https://zh-hans.react.dev/reference/react/createContext#provider
+- https://zh-hans.legacy.reactjs.org/docs/context.html#contextprovider
+- https://zh-hans.legacy.reactjs.org/docs/legacy-context.html#how-to-use-context
+
+## 读取和订阅上下文
+
+使用/访问/读取和订阅上下文
+
+- useContext()
+  - `<SomeContext.Consumer>`
+  - this.context
+
+<Tabs groupId="context" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx
+
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx
+
+```
+</TabItem>
+</Tabs>
+
+- https://zh-hans.react.dev/reference/react/useContext
+- https://zh-hans.react.dev/reference/react/createContext#consumer
+- https://zh-hans.legacy.reactjs.org/docs/context.html#contextconsumer
+- https://zh-hans.legacy.reactjs.org/docs/legacy-context.html#how-to-use-context
