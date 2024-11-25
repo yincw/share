@@ -1,31 +1,11 @@
 # 跨平台
 
-## 应用类型及框架
-
-- Web 应用
-  - React
-  - React DOM
-- 小程序应用
-  - Taro
-- 移动应用
-  - React Native
-    - Expo
-- 桌面应用
-  - PWA
-  - Electron
-    - Electron Builder
-- 服务端应用
-  - Node.js
-    - Apollo Server
-  - GraphQL
-  
-## 语言
-
-- HTML5
-- CSS3
-  - Less
-  - PostCSS
-- JavaScript
-  - TypeScript
-- Dart
-  - Flutter
+分类 | 框架 | 教程
+---|---|---
+Web 应用 | [React](https://zh-hans.react.dev/) | [React Notes](/guide/intro/)
+`\- 客户端渲染应用`（SPA、CSR） | [UmiJS](https://umijs.org) | [React Notes](/guide/intro/)
+`\- 服务端渲染应用`（MPA、SSR、SEO） | [Next.js](https://nextjs.org/) | Next.js Notes
+小程序应用（微信、QQ、抖音、淘宝、支付宝、...） | [Taro](https://taro.js.org/) | Taro Notes
+移动应用（Android、iOS、HarmonyOS） | [React Native](https://reactnative.dev/) | React Native Notes
+桌面应用（Windows、macOS、Linux） | [Electron](https://www.electronjs.org/) | Electron Notes
+移动应用/桌面应用 | [Flutter](https://flutter.dev/) | Flutter Notes
