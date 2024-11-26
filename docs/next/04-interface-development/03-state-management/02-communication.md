@@ -10,9 +10,3 @@
 - 跨多层级组件通信
   - context
   - Redux
-
-## 参考
-
-- https://zh-hans.react.dev/learn/sharing-state-between-components
-- https://zh-hans.react.dev/learn/passing-data-deeply-with-context
-- https://zh-hans.react.dev/learn/scaling-up-with-reducer-and-context

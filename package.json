@@ -9,7 +9,7 @@
     "README.md"
   ],
   "scripts": {
-    "docs:start": "docusaurus start",
+    "docs:dev": "docusaurus start",
     "docs:build": "docusaurus build",
     "docs:serve": "docusaurus serve",
     "docs:deploy": "cross-env GIT_USER=yincw && docusaurus deploy",

@@ -20,9 +20,15 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
+            className="button button--primary button--lg"
             to="/docs/guide/intro/">
             介绍
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/guide/getting-started/"
+            style={{marginLeft: '20px'}}>
+              快速上手
           </Link>
         </div>
       </div>

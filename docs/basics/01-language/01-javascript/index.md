@@ -1,14 +1,30 @@
 # JavaScript
 
-- 模块化
-  - 动态加载
-- 函数
-- 类
-  - 原型
-  - 装饰器
+- 基础
+  - 语法及语句
+- 编程范式
+  - function
+    - 重载
+  - class
+    - Object/prototype
+    - 装饰器
 - 数据结构
-  - 对象
-  - 数组
+  - Object 对象
+  - Array 数组
+  - Number
+  - String
+  - Boolean
+  - Null
+  - Symbol
+  - undefined
+- 模块化
+  - import
+  - import()
+  - export
+- 异步编程
+  - async/await
+  - promise
+  - generator/yield
 - 事件
   - 事件循环
   - DOM 事件模型
@@ -27,7 +43,6 @@
     - 生命周期钩子函数
     - 高阶组件
     - 装饰器
-- 
 - 浏览器渲染原理
   - DOM 树
   - CSSOM 树
@@ -42,7 +57,6 @@
 - 响应式
   - 虚拟 DOM & Diff 算法
   - 协调
-- 
 
 - https://blog.csdn.net/MakeGay/article/details/129378653
 - https://blog.csdn.net/helloworld1024fd/article/details/127319951

@@ -102,6 +102,11 @@ const config: Config = {
           // to: '/faq', 
           label: '场景问题', position: 'left'},
         { to: '/blog', label: '博客', position: 'left'},
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'nextSidebar',
+        //   // to: '/next', 
+        //   label: 'Next.js 教程', position: 'left'},
         
         {
           type: 'search',
@@ -167,6 +172,10 @@ const config: Config = {
             {
               label: 'Vue 教程',
               href: 'https://yincw.github.io/vue-notes/guide/00-intro/',
+            },
+            {
+              label: 'Next.js 教程',
+              to: '/share/docs/next/intro/',
             },
             // {
             //   label: 'AngularJS 教程',

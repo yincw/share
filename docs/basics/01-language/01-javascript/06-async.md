@@ -1,5 +1,10 @@
 # 异步编程
 
+- async/await
+- Promise
+- generator
+  - function*/yield/next()
+
 - 事件循环（Event Loop）
 - 任务队列
   - 微任务（微队列）
