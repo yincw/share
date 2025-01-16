@@ -9,18 +9,25 @@ JSX | [`<Fragment>` / `<></>`](https://zh-hans.react.dev/reference/react/Fragmen
 渲染函数 | - | [createElement(type, props, ...children)](https://zh-hans.react.dev/reference/react/createElement) v0.13
 `\-` | - | [~~createFactory(type)~~](https://zh-hans.react.dev/reference/react/createFactory) v0.13
 `\-` | - | [cloneElement(element, props, ...children)](https://zh-hans.react.dev/reference/react/cloneElement) v0.13
-`\-` | - | [React.isValidElement()](https://zh-hans.react.dev/reference/react/isValidElement) v0.13
-强制重新渲染 | [useSyncExternalStore()](https://zh-hans.react.dev/reference/react/useSyncExternalStore) v18 | [forceUpdate()](https://zh-hans.react.dev/reference/react/Component#forceupdate) v0.13
-服务端渲染 | [hydrateRoot()](https://zh-hans.react.dev/reference/react-dom/client/hydrateRoot) v18.0 | [ReactDOM.hydrate()](https://zh-hans.legacy.reactjs.org/docs/react-dom.html#hydrate) v0.13
-`\-` | - | ReactDOM.renderToString() v0.13 <br/> [renderToString(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToString) v18.0
+`\-` | - | [isValidElement()](https://zh-hans.react.dev/reference/react/isValidElement) v0.13
+SSR/服务端渲染 | - | ReactDOM.renderToString() v0.13 <br/> [renderToString(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToString) v18.0
 `\-` | - | ReactDOM.renderToStaticMarkup() v0.13 <br/> [renderToStaticMarkup(reactNode, options?) ](https://zh-hans.react.dev/reference/react-dom/server/renderToStaticMarkup) v18.0
+`\-Web Streams` | - | [renderToReadableStream(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToReadableStream) v18.0
 `\-Node.js Streams` | - | [renderToPipeableStream(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToPipeableStream) v18.0
 `\-` | - | [renderToStaticNodeStream(reactNode, options?) ](https://zh-hans.react.dev/reference/react-dom/server/renderToStaticNodeStream) v18.0
 `\-` | - | ~~ReactDOM.renderToNodeStream()~~ v0.13 <br/> [~~renderToNodeStream(reactNode, options?)~~](https://zh-hans.react.dev/reference/react-dom/server/renderToNodeStream) v18.0
-`\-Web Streams` | - | [renderToReadableStream(reactNode, options?)](https://zh-hans.react.dev/reference/react-dom/server/renderToReadableStream) v18.0
-`\-` | [`<meta>`](https://zh-hans.react.dev/reference/react-dom/components/meta) | - 
-`\-` | [`<title>`](https://zh-hans.react.dev/reference/react-dom/components/title) | - 
-`\-` | [`<script>`](https://zh-hans.react.dev/reference/react-dom/components/script) | - 
+SSG/静态站点生成 | [prerender()](https://react.dev/reference/react-dom/static/prerender) v19.0 | - 
+`\-` | [prerenderToNodeStream()](https://react.dev/reference/react-dom/static/prerenderToNodeStream) v19.0 | - 
+HTML元数据 | [`<meta>`](https://zh-hans.react.dev/reference/react-dom/components/meta) v19.0 | - 
+`\-` | [`<title>`](https://zh-hans.react.dev/reference/react-dom/components/title) v19.0 | - 
+`\-` | [`<script>`](https://zh-hans.react.dev/reference/react-dom/components/script) v19.0 | - 
+预加载资源 | [preinit()](https://react.dev/reference/react-dom/preinit) v19.0 | - 
+`\-` | [preload()](https://react.dev/reference/react-dom/preload) v19.0 | - 
+`\-` | [prefetchDNS()](https://react.dev/reference/react-dom/prefetchDNS) v19.0 | - 
+`\-` | [preconnect()](https://react.dev/reference/react-dom/preconnect) v19.0 | - 
+`\-` | [preinitModule()](https://react.dev/reference/react-dom/preinitModule) v19.0 | - 
+`\-` | [preloadModule()](https://react.dev/reference/react-dom/preloadModule) v19.0 | - 
+服务器组件 | [cache()](https://react.dev/reference/react/cache) v19.0 | - 
 
 ## 大纲
 
@@ -43,8 +50,11 @@ JSX | [`<Fragment>` / `<></>`](https://zh-hans.react.dev/reference/react/Fragmen
     - 只渲染一次
     - 缓存模板
 - 渲染函数
-- 强制重新渲染
 - 服务端渲染
+- 静态站点生成
+- HTML元数据
+- 预加载资源
+- 服务器组件
 - 自定义渲染
   - 原生渲染
   - 测试渲染
@@ -135,31 +145,8 @@ import TabItem from '@theme/TabItem';
 // https://zh-hans.legacy.reactjs.org/docs/react-without-jsx.html
 ```
 
-## 强制重新渲染
-
-- useSyncExternalStore()
-  - forceUpdate()
-  - useReducer() + 递增
-
-<Tabs groupId="render" queryString>
-<TabItem value="Hooks" label="Hooks" default>
-```tsx
-// https://zh-hans.react.dev/reference/react/useSyncExternalStore
-// https://zh-hans.react.dev/reference/react/Component#forceupdate
-// https://zh-hans.legacy.reactjs.org/docs/hooks-faq.html#is-there-something-like-forceupdate
-```
-</TabItem>
-<TabItem value="Classes" label="Classes">
-```tsx
-
-```
-</TabItem>
-</Tabs>
-
 ## 服务端渲染
 
-- hydrateRoot()
-  - ReactDOM.hydrate()
 - renderToString()
   - ReactDOM.renderToString()
 - renderToStaticMarkup()

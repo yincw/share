@@ -1,5 +1,3 @@
-# React Notes（Preview）
+# React Notes
 
-React 技术栈学习笔记
-
-React 18/16 相关的方方面面
+React 技术栈学习笔记；React 相关的方方面面

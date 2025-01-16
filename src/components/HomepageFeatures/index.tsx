@@ -10,32 +10,56 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Web 应用开发',
+    Svg: require('@site/static/img/web.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        基于 React；包含：开发环境集成、项目脚手架、界面开发、监控与分析、架构设计、性能优化、Web安全、服务端渲染；支持浏览器环境。
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: '小程序应用开发',
+    Svg: require('@site/static/img/mp.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        基于 Taro；支持 微信、QQ、抖音、淘宝、支付宝...
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: '移动应用开发',
+    Svg: require('@site/static/img/app.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        基于 React Native/Flutter；支持 Android、iOS、HarmonyOS。
+      </>
+    ),
+  },
+  {
+    title: '桌面应用开发',
+    Svg: require('@site/static/img/desktop.svg').default,
+    description: (
+      <>
+        基于 Electron/Flutter；支持 Windows、macOS、Linux。
+      </>
+    ),
+  },
+  {
+    title: '服务端开发',
+    Svg: require('@site/static/img/api.svg').default,
+    description: (
+      <>
+        基于 Apollo Server；包含 Node.js 服务端框架、中间价、应用容器、云服务、服务器、数据库、操作系统...
+      </>
+    ),
+  },
+  {
+    title: '前端基石',
+    Svg: require('@site/static/img/basic.svg').default,
+    description: (
+      <>
+        包含 编程语言、编程范式、设计模式、数据结构与算法、正则表达式；计算机网络&协议、数据库、操作系统、编译原理、计算机基础。
       </>
     ),
   },

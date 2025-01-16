@@ -5,6 +5,7 @@
 DOM 实例 | [`ref`](https://zh-hans.react.dev/learn/referencing-values-with-refs) v0.13 | [`ref`](https://zh-hans.react.dev/learn/referencing-values-with-refs) v0.13
 `\-获取` | [useRef()](https://zh-hans.react.dev/reference/react/useRef) v16.8 | [React.createRef()](https://zh-hans.react.dev/reference/react/createRef) v16.3 <br /> [~~this.refs~~](https://zh-hans.legacy.reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs) v0.13
 `\-立即更新` | - | [ReactDOM.flushSync()](https://zh-hans.react.dev/reference/react-dom/flushSync) v0.13
+`\-强制重新渲染` | [useSyncExternalStore()](https://zh-hans.react.dev/reference/react/useSyncExternalStore) v18.0 | [forceUpdate()](https://zh-hans.react.dev/reference/react/Component#forceupdate) v0.13
 `\-查找` | - | [~~ReactDOM.findDOMNode()~~](https://zh-hans.react.dev/reference/react-dom/findDOMNode) v0.13
 组件实例 | [useImperativeHandle()](https://zh-hans.react.dev/reference/react/useImperativeHandle) v16.8 | [React.forwardRef()](https://zh-hans.react.dev/reference/react/forwardRef#forwardref) v16.3
 `\-挂载` | - | [ReactDOM.createPortal()](https://zh-hans.react.dev/reference/react-dom/createPortal) v16.0
@@ -15,6 +16,7 @@ DOM 实例 | [`ref`](https://zh-hans.react.dev/learn/referencing-values-with-ref
   - 引用
   - 获取
   - 立即更新
+  - 强制重新渲染
   - 查找
   - ~~挂载~~
 - 组件实例
@@ -64,6 +66,27 @@ import TabItem from '@theme/TabItem';
 // https://zh-hans.react.dev/learn/manipulating-the-dom-with-refs#when-react-attaches-the-refs
 // https://zh-hans.react.dev/reference/react-dom/flushSync
 ```
+
+### 强制重新渲染
+
+- useSyncExternalStore()
+  - forceUpdate()
+  - useReducer() + 递增
+
+<Tabs groupId="render" queryString>
+<TabItem value="Hooks" label="Hooks" default>
+```tsx
+// https://zh-hans.react.dev/reference/react/useSyncExternalStore
+// https://zh-hans.react.dev/reference/react/Component#forceupdate
+// https://zh-hans.legacy.reactjs.org/docs/hooks-faq.html#is-there-something-like-forceupdate
+```
+</TabItem>
+<TabItem value="Classes" label="Classes">
+```tsx
+
+```
+</TabItem>
+</Tabs>
 
 ### 查找
 

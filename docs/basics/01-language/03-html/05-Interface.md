@@ -1,0 +1,391 @@
+# 接口（Interfaces）
+
+- WebAPI
+  - DOM
+  - HTML
+    - DOM
+    - Drag and Drop
+  - 其他
+  - CSSOM
+
+## DOM
+
+- 事件
+  - EventTarget 事件目标
+    - AbortController 控制器
+    - AbortSignal 信号
+    - Node 节点
+      - NodeList 节点集合
+      - NodeIterator 节点列表的迭代器
+      - DocumentType 文档类型
+      - Document 文档
+        - TreeWalker 文档子树
+        - DocumentFragment 文档片段
+        - DOMParser 解析
+        - DOMImplementation
+      - Element 元素
+        - HTML
+          - HTMLElement
+          - HTMLCollection
+        - XML
+          - XMLDocument
+          - CDATASection
+          - ProcessingInstruction
+        - SVG
+          - SVGElement
+        - MathML
+          - MathElement
+      - Attr 属性
+        - NamedNodeMap 属性对象
+        - DOMTokenList 空格隔开的属性值
+      - CharacterData 字符
+        - Comment 注释
+        - Text 文本
+          - TextEncoder 编码
+          - TextDecoder 解码
+      - DOMException 异常
+      - 范围
+        - AbstractRange
+          - Range
+          - StaticRange
+      - 空间
+        - DOMPointReadOnly
+          - DOMPoint
+          - DOMRect
+  - Event 事件
+    - UIEvent
+    - CustomEvent
+  - EventListener 事件监视
+    - MutationObserver
+    - MutationRecord
+
+### MathML
+
+- MathMLElement
+
+### SVG
+
+- SVGElement
+  - 元数据
+    - SVGMetadataElement
+    - SVGTitleElement
+    - SVGStyleElement
+    - SVGScriptElement
+  - 容器
+    - SVGViewElement
+    - SVGSVGElement
+    - SVGTSpanElement
+  - 导航
+    - SVGAElement
+    - SVGGElement
+  - 排版
+  - 数据展示
+    - SVGImageElement
+    - SVGGraphicsElement
+    - SVGGeometryElement
+  - 数据录入
+  - 反馈
+  - 插槽/Web组件
+  - 遗留/废弃⚠️
+  - 线条
+    - SVGLineElement
+    - SVGPolylineElement
+  - 路径
+    - SVGPathElement
+    - SVGMPathElement
+    - SVGClipPathElement
+    - SVGTextPathElement
+  - 形状
+    - SVGCircleElement
+    - SVGRectElement
+    - SVGPolygonElement
+  - 文本
+    - SVGTextElement
+    - SVGTextContentElement
+    - SVGTextPositioningElement
+  - 变换
+    - SVGTransform
+    - SVGTransformList
+  - 动画
+    - SVGAnimateElement
+    - SVGAnimateMotionElement
+    - SVGAnimateTransformElement
+    - SVGAnimationElement
+  - 滤镜
+    - SVGFilterElement
+  - 模式
+    - SVGPatternElement
+    - SVGMaskElement
+  - 效果
+    - 渐变
+      - SVGGradientElement
+      - SVGLinearGradientElement
+      - SVGRadialGradientElement
+  - SVGCursorElement
+  - SVGDefsElement
+  - SVGDescElement
+  - SVGComponentTransferFunctionElement
+  - SVGForeignObjectElement
+  - SVGSetElement
+  - SVGStopElement
+  - SVGSwitchElement
+  - SVGSymbolElement
+  - SVGUseElement
+  - SVGEllipseElement
+  - SVGFEBlendElement
+  - SVGFEColorMatrixElement
+  - SVGFECompositeElement
+  - SVGFEComponentTransferElement
+  - SVGFEConvolveMatrixElement
+  - SVGFEDiffuseLightingElement
+  - SVGFEDisplacementMapElement
+  - SVGFEDistantLightElement
+  - SVGFEDropShadowElement
+  - SVGFEFloodElement
+  - SVGFEFuncAElement
+  - SVGFEFuncBElement
+  - SVGFEFuncGElement
+  - SVGFEFuncRElement
+  - SVGFEGaussianBlurElement
+  - SVGFEImageElement
+  - SVGFEMergeElement
+  - SVGFEMergeNodeElement
+  - SVGFEMorphologyElement
+  - SVGFEOffsetElement
+  - SVGFEPointLightElement
+  - SVGFESpecularLightingElement
+  - SVGFESpotLightElement
+  - SVGFETileElement
+  - SVGFETurbulenceElement
+- https://developer.mozilla.org/en-US/docs/Web/API/SVG_API
+
+### HTML
+
+- Document
+  - HTMLElement
+    - 元数据
+      - HTMLHtmlElement
+        - HTMLHeadElement
+          - HTMLTitleElement
+          - HTMLBaseElement
+          - HTMLMetaElement
+          - HTMLLinkElement
+          - HTMLStyleElement
+          - HTMLScriptElement
+        - HTMLBodyElement
+    - 容器
+      - HTMLDivElement
+      - HTMLSpanElement
+    - 导航
+      - HTMLMenuElement
+      - HTMLAnchorElement
+      - HTMLMapElement
+      - HTMLAreaElement
+      - HTMLHRElement
+    - 排版
+      - HTMLHeadingElement
+      - HTMLParagraphElement
+      - HTMLModElement
+      - HTMLBRElement
+      - HTMLQuoteElement
+      - HTMLPreElement
+      - HTMLDListElement
+      - HTMLOListElement
+      - HTMLUListElement
+        - HTMLLIElement
+      - HTMLTableElement
+        - HTMLTableCaptionElement
+        - HTMLTableSectionElement
+          - HTMLTableRowElement
+            - HTMLTableColElement
+            - HTMLTableCellElement
+      - HTMLDataElement
+      - HTMLTimeElement
+    - 数据展示
+      - HTMLPictureElement
+        - HTMLImageElement
+      - HTMLCanvasElement
+      - HTMLIFrameElement
+      - HTMLEmbedElement
+      - HTMLObjectElement
+      - HTMLMediaElement
+        - HTMLAudioElement
+        - HTMLVideoElement
+        - HTMLSourceElement
+        - HTMLTrackElement
+    - 数据录入
+      - HTMLFormElement
+        - HTMLFieldSetElement
+          - HTMLLegendElement
+        - HTMLLabelElement
+        - HTMLInputElement
+        - HTMLTextAreaElement
+        - HTMLSelectElement
+          - HTMLOptGroupElement
+          - HTMLOptionElement
+        - HTMLDataListElement
+        - HTMLButtonElement
+        - HTMLOutputElement
+    - 反馈
+      - HTMLProgressElement
+      - HTMLMeterElement
+      - HTMLDialogElement
+      - HTMLDetailsElement
+    - 插槽
+      - HTMLTemplateElement
+      - HTMLSlotElement
+  - 遗留/废弃⚠️
+    - HTMLFormControlsCollection
+    - HTMLOptionsCollection
+    - HTMLAllCollection
+    - HTMLParamElement
+    - ~~HTMLDirectoryElement~~
+    - ~~HTMLFontElement~~
+    - ~~HTMLFrameSetElement~~
+    - ~~HTMLFrameElement~~
+    - ~~HTMLMarqueeElement~~
+  - HTMLUnknownElement
+- Element
+  - ElementInternals
+
+### Event
+
+- Event
+  - 表单接口 `form` 和 `input`
+    - FormDataEvent
+    - SubmitEvent
+  - `details` ant `popover`
+    - ToggleEvent
+  - 媒体接口 `audio` and `video`
+    - TrackEvent
+  - drag-and-drop 拖放接口
+    - DragEvent
+  - 页面历史接口
+    - PageTransitionEvent
+    - PageSwapEvent
+    - PageRevealEvent
+    - PopStateEvent
+    - HashChangeEvent
+    - BeforeUnloadEvent
+  - 杂项和其他支持接口
+    - ErrorEvent
+    - PromiseRejectionEvent
+  - Web API 接口
+    - Web Storage 接口
+      - StorageEvent
+    - Web Worker 接口
+      - MessageEvent
+    - WebSocket 接口
+      - CloseEvent
+    - Server-sent 事件接口
+    - ClipboardEvent
+    - NavigateEvent
+    - NavigationCurrentEntryChangeEvent
+- UIEvent
+  - FocusEvent
+  - InputEvent
+  - MouseEvent
+    - PointerEvent
+    - WheelEvent
+  - KeyboardEvent
+  - CompositionEvent
+- Content Security Policy (CSP)
+  - SecurityPolicyViolationEvent
+
+## HTML DOM API
+
+- Window 窗口
+- Navigator 客户端信息
+- History 历史记录
+- Location 地址栏
+  - BarProp 工具栏属性
+    - locationbar 地址栏
+    - menubar 菜单栏
+    - personalbar 个人栏
+    - scrollbars 滚动栏
+    - statusbar 状态栏
+    - toolbar 工具栏
+- Navigation 导航栏
+  - NavigationActivation
+  - NavigationTransition
+  - NavigationHistoryEntry
+  - NavigationDestination
+- 遗留/废弃⚠️
+  - ~~External~~ 外部
+  - ~~Plugin~~
+  - ~~PluginArray~~
+- `form` 和 `input` 表单接口
+  - RadioNodeList
+  - ValidityState
+- `canvas` 图形和图像接口
+  - CanvasGradient
+  - CanvasPattern
+  - CanvasRenderingContext2D
+  - OffscreenCanvas
+    - OffscreenCanvasRenderingContext2D
+  - `img` 和 `picture`
+    - ImageData
+      - ImageBitmap
+      - ImageBitmapRenderingContext
+    - Path2D
+    - TextMetrics
+- `dialog`
+  - CloseWatcher
+- `audio` and `video` 媒体接口
+  - AudioTrackList
+    - AudioTrack
+  - VideoTrackList
+    - VideoTrack
+  - MediaError
+  - TimeRanges 时间范围
+  - `track`
+    - TextTrackList
+      - TextTrack
+    - TextTrackCueList
+      - TextTrackCue
+- drag-and-drop 拖放接口
+  - DataTransfer
+  - DataTransferItemList
+    - DataTransferItem
+- Web 组件接口
+  - CustomElementRegistry
+  - CustomStateSet
+  - ShadowRoot
+- 杂项和其他支持接口
+  - DOMStringList
+  - DOMStringMap
+  - MimeType
+  - MimeTypeArray
+- Web API 接口
+  - Web Storage 接口
+    - Storage
+  - Web Worker 接口
+    - BroadcastChannel
+    - MessageChannel
+    - MessagePort
+    - Worker
+    - WorkerGlobalScope
+    - WorkerNavigator
+    - WorkerLocation
+    - SharedWorker
+    - SharedWorkerGlobalScope
+    - DedicatedWorkerGlobalScope
+    - Worklet
+    - WorkletGlobalScope
+  - WebSocket 接口
+    - WebSocket
+  - Server-sent 事件接口
+    - EventSource
+- Clipboard
+- UserActivation
+- NotRestoredReasons
+  - NotRestoredReasonDetails
+- VisibilityStateEntry
+
+## CSSOM
+
+- VisualViewport
+
+## 参考
+
+- https://html.spec.whatwg.org/multipage/indices.html#all-interfaces

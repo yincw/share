@@ -1,6 +1,6 @@
 # 测试
 
-- React.act()
+- act()
 - Mock mock
   - Mock.js
 - 单元测试

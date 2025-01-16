@@ -1,0 +1,62 @@
+# 属性（Attributes）
+
+- 元数据
+  - base
+  - 💥 **meta** *
+  - 💥 **link** *
+  - style
+  - 💥 **script** *
+  - 💥 **body** *
+- 容器
+- 导航
+  - 💥 **a** *
+  - map
+  - 💥 **area** *
+- 排版
+  - del
+  - ins
+  - q
+  - blockquote
+  - ol
+  - col
+  - colgroup
+  - th
+  - td
+  - data
+  - time
+- 数据展示
+  - 图片和图形
+    - 💥 **img** *
+    - 💥 **iframe** *
+    - embed
+    - object
+    - 💥 **canvas**
+  - 媒体
+    - 💥 **audio** *
+    - 💥 **video** *
+    - 💥 **source** *
+    - 💥 **track**
+- 数据录入
+  - 💥 **form** *
+  - fieldset
+  - label
+  - 💥 **input** *
+  - 💥 **textarea** *
+  - 💥 **select** *
+  - optgroup
+  - option
+  - 💥 **button** *
+  - output
+- 反馈
+  - progress
+  - meter
+  - 💥 **dialog**
+  - 💥 **details**
+- 插槽
+  - template *
+  - 💥 **slot**
+
+## 参考
+
+- https://html.spec.whatwg.org/multipage/indices.html#elements-3
+- https://html.spec.whatwg.org/multipage/indices.html#attributes-3

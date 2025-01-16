@@ -1,40 +1,63 @@
 # JavaScript
 
-- 基础
-  - 语法及语句
-- 编程范式
-  - function
+- 关键字（Keywords）
+- 变量（Variables）/常量（Constants）
+  - 强类型
+    - 类型声明
+    - 内置类型工具
+    - 范型
+- 运算符/操作符（Operators）/表达式（Expressions）
+  - 扩展符
+- 流程控制语句（Statements）
+  - if 语句
+  - 循环语句
+- 注释
+  - 元数据注释
+- 异步编程
+  - 事件
+    - 事件循环
+    - DOM 事件模型
+    - 事件代理
+  - Promise
+  - 网络请求
+  - 缓存
+- 类 Classes
+  - 实例化
+  - 封装
+    - 接口和抽象类
+  - 继承
+  - 多态
+    - 混入
+    - 类修饰符
+    - 实现
     - 重载
-  - class
-    - Object/prototype
     - 装饰器
-- 数据结构
-  - Object 对象
-  - Array 数组
-  - Number
+- 函数 Function
+  - 作用域
+  - 指针
+  - 上下文
+  - 生成器（Generator）函数 *-yield
+  - 异步（Async）函数 async-await
+  - 箭头函数
+  - 参数
+    - 默认值
+  - 参数类型
+    - 必填校验
+  - 重载
+- 内置类型
   - String
   - Boolean
-  - Null
+  - Number
   - Symbol
+  - null
   - undefined
-- 模块化
-  - import
-  - import()
-  - export
-- 异步编程
-  - async/await
-  - promise
-  - generator/yield
-- 事件
-  - 事件循环
-  - DOM 事件模型
-  - 事件代理
-- 表单
-  - 控件
-  - 绑定
-- 错误
-  - 捕获
-  - 内存泄漏
+- 内置对象
+  - BigInt
+  - Date
+  - RegExp
+  - Error
+  - Math
+  - JSON
 - 编程范式
   - 函数式编程
     - 纯函数
@@ -54,10 +77,6 @@
     - https://juejin.cn/post/7229698783645351996
     - https://juejin.cn/post/6844903569087266823
     - https://juejin.cn/post/6844903656836317198
-- 响应式
-  - 虚拟 DOM & Diff 算法
-  - 协调
-
 - https://blog.csdn.net/MakeGay/article/details/129378653
 - https://blog.csdn.net/helloworld1024fd/article/details/127319951
 - https://blog.csdn.net/ChenXiaoTemp/article/details/48733273

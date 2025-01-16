@@ -8,9 +8,9 @@
   - Redux
   - Redux Saga
 - 网络请求及缓存
+  - Axios
   - Redux RTK Query
   - React Query
-  - Axios
 - 动画
   - [React Motion](https://github.com/chenglou/react-motion)
 - 国际化

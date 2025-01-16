@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'React Notes',
-  tagline: 'React 技术栈学习笔记 📒 React 18/16 相关的方方面面',
+  tagline: 'React 技术栈学习笔记 📒 React 相关的方方面面',
   // favicon: 'img/favicon.ico',
   favicon: 'img/logo.svg',
 
@@ -96,11 +96,6 @@ const config: Config = {
             sidebarId: 'basicSidebar',
             // to: '/faq', 
             label: '前端基石', position: 'left'},
-          {
-          type: 'docSidebar',
-          sidebarId: 'faqSidebar',
-          // to: '/faq', 
-          label: '场景问题', position: 'left'},
         { to: '/blog', label: '博客', position: 'left'},
         // {
         //   type: 'docSidebar',
@@ -173,13 +168,25 @@ const config: Config = {
               label: 'Vue 教程',
               href: 'https://yincw.github.io/vue-notes/guide/00-intro/',
             },
+            // {
+            //   label: 'AngularJS 教程',
+            //   href: 'https://yincw.github.io/',
+            // },
             {
               label: 'Next.js 教程',
               to: '/share/docs/next/intro/',
             },
+            {
+              label: 'Taro 教程',
+              to: '/share/docs/taro/intro/',
+            },
+            {
+              label: 'React Native 教程',
+              to: '/share/docs/react-native/intro/',
+            },
             // {
-            //   label: 'AngularJS 教程',
-            //   href: 'https://yincw.github.io/',
+            //   label: 'Electron',
+            //   to: '/share/docs/api/desktop/',
             // },
             // {
             //   label: 'Flutter 教程',
@@ -198,18 +205,6 @@ const config: Config = {
               label: 'Vue',
               href: 'https://yincw.github.io/vue-notes/api/01-vue/',
             },
-            // {
-            //   label: 'Taro',
-            //   to: '/share/docs/api/miniprogram/',
-            // },
-            // {
-            //   label: 'React Native',
-            //   to: '/share/docs/api/app/',
-            // },
-            // {
-            //   label: 'Electron',
-            //   to: '/share/docs/api/desktop/',
-            // },
             {
               label: 'JavaScript',
               href: 'https://vikexia.com/JavaScript/Data_Structures?type=Object',

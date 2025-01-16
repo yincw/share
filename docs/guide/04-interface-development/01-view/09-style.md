@@ -3,9 +3,9 @@
 分类 | Hooks | Classes
 ---|---|---
 外联样式 | [`classname`](https://zh-hans.react.dev/learn#adding-styles) | -
-`\-` | [`<link>`](https://zh-hans.react.dev/reference/react-dom/components/link) | -
+`\-` | [`<link>`](https://zh-hans.react.dev/reference/react-dom/components/link) v19.0 | -
 行内样式 | [`style`](https://zh-hans.react.dev/learn/javascript-in-jsx-with-curly-braces#using-double-curlies-css-and-other-objects-in-jsx) | -
-内联样式 | [`<style>`](https://zh-hans.react.dev/reference/react-dom/components/style) | -
+内联样式 | [`<style>`](https://zh-hans.react.dev/reference/react-dom/components/style) v19.0 | -
 CSS-in-JS | [`useInsertionEffect()`](https://zh-hans.react.dev/reference/react/useInsertionEffect) | -
 
 ## 大纲
