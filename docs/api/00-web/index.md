@@ -23,5 +23,3 @@
     - Qiankun
   - 服务端渲染
     - Next.js
-
-- [Web API](https://developer.mozilla.org/zh-CN/docs/Web/API)

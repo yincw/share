@@ -6,8 +6,8 @@
   - 内联样式 `<style>`
 - 基础
   - 语法
-    - var()
-    - calc()
+    - `var()`
+    - `calc()`
   - 盒模型
     - content
       - width
@@ -28,17 +28,17 @@
     - !important
     - id
     - class
-    - :伪类
-      - :hover
-      - :active
-      - :focus
-      - :disabled
-      - :selected
+    - 伪类
+      - `:hover`
+      - `:active`
+      - `:focus`
+      - `:disabled`
+      - `:selected`
     - []属性
     - 选择器优先级
   - 伪元素
-    - ::before
-    - ::after
+    - `::before`
+    - `::after`
 - 布局
   - Float
   - Position
@@ -68,8 +68,8 @@
     - rgba
   - 混合模式
 - 主题化
-  - :root
-  - var()
+  - `:root`
+  - `var()`
 - 动画效果
   - Transition 过渡
     - transition
@@ -77,14 +77,14 @@
     - transform
   - Animation 动画
     - animation
-    - @keyframes
+    - `@keyframes`
 - CSS 架构
   - 预处理
     - Less
     - PostCSS
   - 样式隔离
     - @scope
-    - :global
+    - `:global`
     - CSS Modules
   - CSS-in-JS
     - styled-components

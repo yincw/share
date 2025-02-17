@@ -2,7 +2,7 @@
 toc_max_heading_level: 4
 ---
 
-# WebAPI
+# Web API
 
 共计 124
 
@@ -186,7 +186,7 @@ WebAPI | 中文名称 | 目标对象 | 环境支持 | 接口(Interfaces)/对象�
 [IndexedDB API](https://developer.allizom.org/en-US/docs/Web/API/IndexedDB_API) | - | - | Web、Worker | -
 [Content Index API 🧪](https://developer.allizom.org/en-US/docs/Web/API/Content_Index_API) | 内容索引 | - | - | -
 
-### 系统
+### 系统-基础
 
 WebAPI | 中文名称 | 目标对象 | 环境支持 | 接口(Interfaces)/对象类型(types of objects)
 ---|---|---|---|---
@@ -203,7 +203,7 @@ WebAPI | 中文名称 | 目标对象 | 环境支持 | 接口(Interfaces)/对象�
 [Background Tasks API](https://developer.allizom.org/en-US/docs/Web/API/Background_Tasks_API) | 后台任务 的协同调度 | - | - | -
 [Prioritized Task Scheduling API](https://developer.allizom.org/en-US/docs/Web/API/Prioritized_Task_Scheduling_API) | 优先任务调度 | - | - | -
 
-### 系统-应用界面
+### 系统-界面
 
 WebAPI | 中文名称 | 目标对象 | 环境支持 | 接口(Interfaces)/对象类型(types of objects)
 ---|---|---|---|---

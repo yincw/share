@@ -1,82 +1,227 @@
 # JavaScript
 
-- 关键字（Keywords）
-- 变量（Variables）/常量（Constants）
+- ECMAScript
+  - 基础/语法
+    - 关键字（Keywords）
+    - 变量（Variables）/常量（Constants）
+      - let
+      - const
+      - var
+      - 变量提升
+      - 变量交换
+      - 引用传递
+      - 值和引用
+      - 全局作用域和函数（局部）作用域
+    - 运算符/操作符（Operators）/表达式（Expressions）
+      - = 赋值运算
+      - ==/=== 相等比较
+      - + 加法运算
+      - ++ 递增
+      - -- 递减
+      - 位移运算
+      - 求余运算
+      - 展开运算（扩展符）
+      - 隐式类型转换
+      - & 和运算
+      - &&
+      - | 或运算
+      - ||
+      - 异或运算
+    - 流程控制语句（Statements）
+      - 分支结构
+      - 循环结构
+      - label
+      - for
+      - for-in
+      - for-of
+      - forEach
+      - map
+      - filter
+      - reduce
+    - 注释
+      - 元数据注释
+  - 编程范式
+    - 函数 = 函数式编程
+      - 函数 Function
+        - 声明
+          - 函数声明 function
+          - 函数表达式
+          - this 指向
+          - call apply bind
+          - length
+        - 作用域
+          - 闭包
+          - 立即执行函数
+        - 闭包函数
+        - 箭头函数 =>
+        - 生成器函数 Generator *-yield
+        - 异步函数 async-await
+        - 函数签名与重载
+      - 函数参数
+        - 命名参数
+        - 可选参数 ?
+        - 参数默认值 =
+        - 剩余参数 ...
+        - 归一化
+        - 二义性
+      - 奇偶性
+      - 惰性函数与函数防抖
+      - 函数柯里化（链式调用）
+      - 纯函数
+    - 对象：原型/类 = 面向对象编程
+      - 类 Classes
+        - 初始化/实例化
+          - 构造器
+          - 静态初始化块
+        - 公有属性
+          - 实例字段
+          - 实例方法
+          - 实例只读方法
+          - 实例只写方法
+          - 静态字段
+          - 静态方法
+          - 静态只读方法
+          - 静态只写方法
+        - 私有属性
+          - 私有字段
+          - 私有方法
+          - 私有只读方法
+          - 私有只写方法
+          - 私有静态字段
+          - 私有静态方法
+      - 基本要素
+        - 封装（对象标识）
+          - 类
+        - 继承（对象状态）
+          - 接口和抽象类
+        - 多态（对象行为）
+          - 扩展/实现
+          - 装饰器/类修饰符
+          - 重载/覆盖
+          - 混入
+        - 原型链
+        - class 转 function
+      - https://www.yuque.com/yincw/nt2t79/ovlgamwukvygcbcg
+    - 切面 = 面向切面编程（AOP） 切面逻辑
+      - 钩子函数
+      - 生命周期钩子函数
+      - 高阶组件
+      - 装饰器
+  - 数据结构与算法
+    - 数据结构
+      - typeof
+      - 布尔值 Boolean
+        - 布尔判断和短路规则
+      - 数值 Number
+        - 小数运算
+        - 大数运算
+        - 小数取整
+        - 数字格式化
+        - 数字转中文
+      - 字符串 String
+        - 字符串
+          - 比较
+          - 截取
+          - 替换
+        - 模板字符串
+        - 零宽字符
+        - 拼音标注
+        - 验证回文串
+        - 统计字符数
+        - 统计字符频率
+      - 对象 Object
+        - 属性
+          - 可遍历性
+          - 存在性
+          - 类型
+        - 冻结
+        - 解构
+        - 深度克隆
+        - 深拷贝的循环引用
+      - 数组 Array
+        - 数组判断
+        - 稀疏数组判断
+        - 漩涡型二维数组
+        - 去重
+        - 对象数组去重
+        - 交集
+        - 并集
+        - 差集
+      - Symbol
+      - null
+      - undefined
+        - void 0
+    - 算法
+  - 正则表达式
+    - RegExp
+  - 内置对象
+    - BigInt
+    - Math
+    - Date
+    - JSON
+    - Error
+  - 全局对象
+    - parseInt
+    - Math.floor
+  - 设计模式
+    - 模块化
+      - IIFE
+      - CommonJS
+      - ES Module
+      - 幻影依赖
+      - 对等依赖
+      - 依赖倒置原则和检查依赖
+    - 命名空间
+    - 事件驱动
+      - 事件
+      - 事件循环
+      - DOM 事件模型
+      - 事件代理
+      - Promise
+      - 异步编程
+        - 计时器
+        - 时间函数
+        - 异步函数
+          - 判断函数是否标记为 async
+          - 消除异步的传染性
+        - Promise
+          - 手写 Promise
+        - generator
+          - function*-yield/next()
+        - 任务队列
+          - 微任务（微队列）
+            - 函数回调
+            - promise
+            - 生成器函数
+            - async 函数
+          - 宏任务（普通任务队列）
+        - 并发任务控制
+          - setTimeout
+          - setInterval
+- Web API
+  - DOM
+  - CSSOM
+  - BOM
+  - 浏览器渲染原理
+    - DOM 树
+    - CSSOM 树
+    - 渲染树
+      - 布局（layout）
+        - 重排（reflow）/回流
+      - 绘制（painting）
+        - 重绘（repaint）
+      - https://juejin.cn/post/7229698783645351996
+      - https://juejin.cn/post/6844903569087266823
+      - https://juejin.cn/post/6844903656836317198
+- TypeScript
   - 强类型
     - 类型声明
     - 内置类型工具
     - 范型
-- 运算符/操作符（Operators）/表达式（Expressions）
-  - 扩展符
-- 流程控制语句（Statements）
-  - if 语句
-  - 循环语句
-- 注释
-  - 元数据注释
-- 异步编程
-  - 事件
-    - 事件循环
-    - DOM 事件模型
-    - 事件代理
-  - Promise
-  - 网络请求
-  - 缓存
-- 类 Classes
-  - 实例化
-  - 封装
-    - 接口和抽象类
-  - 继承
-  - 多态
-    - 混入
-    - 类修饰符
-    - 实现
+  - 函数
     - 重载
+  - 对象：类
     - 装饰器
-- 函数 Function
-  - 作用域
-  - 指针
-  - 上下文
-  - 生成器（Generator）函数 *-yield
-  - 异步（Async）函数 async-await
-  - 箭头函数
-  - 参数
-    - 默认值
-  - 参数类型
-    - 必填校验
-  - 重载
-- 内置类型
-  - String
-  - Boolean
-  - Number
-  - Symbol
-  - null
-  - undefined
-- 内置对象
-  - BigInt
-  - Date
-  - RegExp
-  - Error
-  - Math
-  - JSON
-- 编程范式
-  - 函数式编程
-    - 纯函数
-  - 面向对象编程
-  - 面向切面编程（AOP） 切面逻辑
-    - 生命周期钩子函数
-    - 高阶组件
-    - 装饰器
-- 浏览器渲染原理
-  - DOM 树
-  - CSSOM 树
-  - render 树
-  - 布局（layout）
-    - 重排（reflow）/回流
-  - 绘制（painting）
-    - 重绘（repaint）
-    - https://juejin.cn/post/7229698783645351996
-    - https://juejin.cn/post/6844903569087266823
-    - https://juejin.cn/post/6844903656836317198
 - https://blog.csdn.net/MakeGay/article/details/129378653
 - https://blog.csdn.net/helloworld1024fd/article/details/127319951
 - https://blog.csdn.net/ChenXiaoTemp/article/details/48733273

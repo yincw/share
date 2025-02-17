@@ -173,10 +173,6 @@ const config: Config = {
             //   href: 'https://yincw.github.io/',
             // },
             {
-              label: 'Next.js 教程',
-              to: '/share/docs/next/intro/',
-            },
-            {
               label: 'Taro 教程',
               to: '/share/docs/taro/intro/',
             },
@@ -184,14 +180,18 @@ const config: Config = {
               label: 'React Native 教程',
               to: '/share/docs/react-native/intro/',
             },
-            // {
-            //   label: 'Electron',
-            //   to: '/share/docs/api/desktop/',
-            // },
+            {
+              label: 'Electron 教程',
+              to: '/share/docs/electron/intro/',
+            },
             // {
             //   label: 'Flutter 教程',
             //   href: 'https://yincw.github.io/',
             // },
+            {
+              label: 'Next.js 教程',
+              to: '/share/docs/next/intro/',
+            }
           ],
         },
         {
