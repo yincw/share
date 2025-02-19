@@ -37,7 +37,7 @@ TODO
   - 注入JavaScript
 - CSRF：Cross-Site Request Forgery 跨站请求伪造攻击
   - token
-  - CSP：Content-Security-Policy
+  - [CSP：Content-Security-Policy](https://yr7ywq.smartapps.baidu.com/?_chatQuery=content-security-policy%20%E9%85%8D%E7%BD%AE&searchid=14067256266618756136&_chatParams=%7B%22agent_id%22%3A%22c816%22%2C%22content_build_id%22%3A%225e9d8a1%22%2C%22from%22%3A%22q2c%22%2C%22token%22%3A%22UGlGZHdpN0lzYXNVbS9Gb1JoeVNNWXRmOGI3Q0R2VFNVZlJSWlMzOW9SSXBUc21PWXBoR2VDai85ZmlqSnJpNmo3UUU5Y0IvbHd6dXZaUUszY3NUbGF6N2owRWZwZWJzWDVNbDRrNnJNM0t0MjFlOXRweGpFY3Nkcm5tUHVDQWcyYURmdWhCNExJQnJ1djFWOU9XYXhRPT0%3D%22%2C%22chat_no_login%22%3Atrue%7D&_swebScene=3711000610001000)
 
 ### 服务端安全
 

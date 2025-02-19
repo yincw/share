@@ -23,7 +23,7 @@ toc_max_heading_level: 4
 [`webFrame`](https://www.electronjs.org/zh/docs/latest/api/web-frame) | 当前网页 | - | electron | Renderer
 [`webUtils`](https://www.electronjs.org/zh/docs/latest/api/web-utils) | Web API 对象交互的工具层 | - | electron | Renderer
 
-#### 通信
+#### 数据通信
 
 模块 | 说明 | 兼容平台 | 来源 | 进程
 ---|---|---|---|---
@@ -60,7 +60,7 @@ toc_max_heading_level: 4
 
 ## 平台
 
-### 调试日志
+### 日志
 
 模块 | 说明 | 兼容平台 | 来源 | 进程
 ---|---|---|---|---
@@ -73,7 +73,7 @@ toc_max_heading_level: 4
 ---|---|---|---|---
 [`inAppPurchase`](https://www.electronjs.org/zh/docs/latest/api/in-app-purchase) | Mac App Store中的应用内购买 | macOS | electron | Main
 
-### 网络
+### 网络协议
 
 模块 | 说明 | 兼容平台 | 来源 | 进程
 ---|---|---|---|---
@@ -95,12 +95,12 @@ toc_max_heading_level: 4
 [`app`](https://www.electronjs.org/zh/docs/latest/api/app) | 应用程序 | - | electron | Main
 [`autoUpdater`](https://www.electronjs.org/zh/docs/latest/api/auto-updater) | 自动更新 | - | - | Main
 [`electron-updater`](https://www.npmjs.com/package/electron-updater) | 更新管理 | - | - | -
+[`electron-dl`](https://www.npmjs.com/package/electron-dl) | 下载管理 | - | - | -
 [`globalShortcut`](https://www.electronjs.org/zh/docs/latest/api/global-shortcut) | 快捷键 | - | electron | Main
 [`nativeTheme`](https://www.electronjs.org/zh/docs/latest/api/native-theme) | 主题 | - | electron | Main
 [`shell`](https://www.electronjs.org/zh/docs/latest/api/shell) | 使用默认应用程序管理文件和 url | - | electron | Main, Renderer
 [`systemPreferences`](https://www.electronjs.org/zh/docs/latest/api/system-preferences) | 系统首选项 | - | electron | Main, Utility
 [`pushNotifications`](https://www.electronjs.org/zh/docs/latest/api/push-notifications) | 消息推送 | macOS | electron | Main
-[`electron-dl`](https://www.npmjs.com/package/electron-dl) | 下载管理 | - | - | -
 
 ### 系统-界面
 

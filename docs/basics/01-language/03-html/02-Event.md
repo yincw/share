@@ -227,14 +227,6 @@
 `dragover` | - | DragEvent
 `drop` | - | DragEvent
 
-## Clipboard 🎯
-
-事件(Event) | 说明(Description) | 接口(Interface)
----|---|---
-`copy` | - | ClipboardEvent
-`cut` | - | ClipboardEvent
-`paste` | - | ClipboardEvent
-
 ## VisualViewport 🎯
 
 事件(Event) | 说明(Description) | 接口(Interface)
@@ -243,18 +235,26 @@
 `scroll` | - | Event
 `scrollend` | - | Event
 
+## Clipboard 🎯
+
+事件(Event) | 说明(Description) | 接口(Interface)
+---|---|---
+`copy` | - | ClipboardEvent
+`cut` | - | ClipboardEvent
+`paste` | - | ClipboardEvent
+
 ## Content Security Policy (CSP) 🎯
 
 事件(Event) | 说明(Description) | 接口(Interface)
 ---|---|---
 `securitypolicyviolation` | - | SecurityPolicyViolationEvent
 
-## EventSource
+## BroadcastChannel
 
 事件(Event) | 说明(Description) | 接口(Interface)
 ---|---|---
-`open` | - | Event
 `message` | - | MessageEvent
+`messageerror` | - | MessageEvent
 
 ## MessagePort
 
@@ -264,12 +264,12 @@
 `message` | - | MessageEvent
 `messageerror` | - | MessageEvent
 
-## BroadcastChannel
+## EventSource
 
 事件(Event) | 说明(Description) | 接口(Interface)
 ---|---|---
+`open` | - | Event
 `message` | - | MessageEvent
-`messageerror` | - | MessageEvent
 
 ## Worker
 
@@ -284,13 +284,6 @@
 ---|---|---
 `error` | - | Event/ErrorEvent
 
-### ServiceWorkerContainer
-
-事件(Event) | 说明(Description) | 接口(Interface)
----|---|---
-`message` | - | MessageEvent
-`messageerror` | - | MessageEvent
-
 ### DedicatedWorkerGlobalScope
 
 事件(Event) | 说明(Description) | 接口(Interface)
@@ -303,6 +296,13 @@
 事件(Event) | 说明(Description) | 接口(Interface)
 ---|---|---
 `connect` | - | MessageEvent
+
+### ServiceWorkerContainer
+
+事件(Event) | 说明(Description) | 接口(Interface)
+---|---|---
+`message` | - | MessageEvent
+`messageerror` | - | MessageEvent
 
 ## Navigation
 

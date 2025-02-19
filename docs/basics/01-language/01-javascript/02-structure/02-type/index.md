@@ -1,0 +1,25 @@
+# 内置类
+
+- Date
+- RegExp
+- BigInt
+- Proxy
+- Set
+- WeakSet
+- Map
+- WeakMap
+- 文件流
+  - File
+  - FileList
+  - FileReader
+  - FormData
+  - Buffer
+  - DataView
+    - ArrayBuffer
+  - TypedArray
+    - Uint8Array
+  - Blob
+- 安全
+  - Base64
+  - TextEncoder
+  - TextDecoder

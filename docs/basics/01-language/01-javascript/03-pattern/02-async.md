@@ -1,5 +1,7 @@
 # 异步编程
 
+控制抽象化
+
 - async/await
 - Promise
 - generator
