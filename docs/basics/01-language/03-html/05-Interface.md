@@ -5,8 +5,8 @@
   - HTML
     - DOM
     - Drag and Drop
-  - 其他
   - CSSOM
+  - 其他
 
 ## DOM
 
