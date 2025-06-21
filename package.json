@@ -62,11 +62,18 @@
     "@docusaurus/preset-classic": "^3.5.2",
     "@docusaurus/theme-live-codeblock": "^3.5.2",
     "@mdx-js/react": "^3.0.0",
+    "cesium": "^1.129.0",
     "clsx": "^2.0.0",
     "core-js": "^3.37.1",
+    "echarts": "^5.6.0",
+    "echarts-gl": "^2.0.9",
+    "ol": "^6.15.1",
+    "ol-echarts": "^4.0.1",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "resium": "^1.19.0-beta.1",
+    "rlayers": "^1.5.3"
   },
   "engines": {
     "node": ">=18.0"

@@ -228,10 +228,10 @@ const config: Config = {
               label: 'OpenLayers',
               to: '/share/docs/api/webgis/openlayers/',
             },
-            // {
-            //   label: 'Cesium',
-            //   to: '/share/docs/api/webgis/cesium/',
-            // },
+            {
+              label: 'Cesium',
+              to: '/share/docs/api/webgis/cesium/',
+            },
             // {
             //   label: 'JavaScript',
             //   href: 'https://vikexia.com/JavaScript/Data_Structures?type=Object',
@@ -250,13 +250,17 @@ const config: Config = {
               to: '/share/docs/examples/visualizing/echarts/',
             },
             {
+              label: 'ECharts GL',
+              to: '/share/docs/examples/webgis/echarts-gl/',
+            },
+            {
               label: 'OpenLayers',
               to: '/share/docs/examples/webgis/openlayers/',
             },
-            // {
-            //   label: 'Cesium',
-            //   to: '/share/docs/examples/webgis/cesium/',
-            // },
+            {
+              label: 'Cesium',
+              to: '/share/docs/examples/webgis/cesium/',
+            },
           ],
         },
         // {

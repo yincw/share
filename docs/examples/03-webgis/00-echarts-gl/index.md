@@ -1,0 +1,21 @@
+# ECharts GL
+
+- 3D 地图
+  - 地图
+    - type: "map3D"
+    - map:
+    - 材质
+      - shading:
+      - realisticMaterial:
+    - geo3D: {}
+  - 视图
+    - viewControl:
+  - 源
+    - echarts.registerMap()
+  - 几何图形
+    - type: "scatter3D"
+    - type: "lines3D"
+    - coordinateSystem: "geo3D"
+  - 交互
+    - 事件
+      - chart.on()
