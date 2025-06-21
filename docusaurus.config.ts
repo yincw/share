@@ -80,23 +80,31 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'guideSidebar',
           // to: '/guide', 
-          label: '教程', position: 'left'},
+          label: '教程',
+          position: 'left'
+        },
         {
           type: 'docSidebar',
           sidebarId: 'apiSidebar',
           // to: '/api', 
-          label: 'API 参考', position: 'left'},
-          {
-            type: 'docSidebar',
-            sidebarId: 'componentsSidebar',
-            // to: '/components', 
-            label: '组件库', position: 'left'},
-          {
-            type: 'docSidebar',
-            sidebarId: 'basicSidebar',
-            // to: '/faq', 
-            label: '前端基石', position: 'left'},
-        { to: '/blog', label: '博客', position: 'left'},
+          label: 'API 参考', 
+          position: 'left'
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'casesSidebar',
+          // to: '/cases', 
+          label: '示例', 
+          position: 'left'
+        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'componentsSidebar',
+        //   // to: '/components', 
+        //   label: '组件库', 
+        //   position: 'left'
+        // },
+        // { to: '/blog', label: '博客', position: 'left'},
         // {
         //   type: 'docSidebar',
         //   sidebarId: 'nextSidebar',
@@ -107,13 +115,13 @@ const config: Config = {
           type: 'search',
           position: 'right',
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          to: '/tutorial',
-          label: 'Docusaurus',
-          position: 'right',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'tutorialSidebar',
+        //   to: '/tutorial',
+        //   label: 'Docusaurus',
+        //   position: 'right',
+        // },
         // {
         //   type: 'dropdown',
         //   label: 'Community',
@@ -141,6 +149,13 @@ const config: Config = {
         //   type: 'localeDropdown',
         //   position: 'right',
         // },
+        {
+          type: 'docSidebar',
+          sidebarId: 'basicSidebar',
+          // to: '/faq', 
+          label: '前端基石', 
+          position: 'right'
+        },
         {
           href: 'https://github.com/yincw/share/',
           label: 'GitHub',
@@ -191,6 +206,10 @@ const config: Config = {
             {
               label: 'Next.js 教程',
               to: '/share/docs/next/intro/',
+            },
+            {
+              label: 'OpenLayers 教程',
+              to: '/share/docs/openlayers/intro/',
             }
           ],
         },
@@ -206,9 +225,17 @@ const config: Config = {
               href: 'https://yincw.github.io/vue-notes/api/01-vue/',
             },
             {
-              label: 'JavaScript',
-              href: 'https://vikexia.com/JavaScript/Data_Structures?type=Object',
+              label: 'OpenLayers',
+              to: '/share/docs/api/webgis/openlayers/',
             },
+            // {
+            //   label: 'Cesium',
+            //   to: '/share/docs/api/webgis/cesium/',
+            // },
+            // {
+            //   label: 'JavaScript',
+            //   href: 'https://vikexia.com/JavaScript/Data_Structures?type=Object',
+            // },
             // {
             //   label: 'TypeScript',
             //   to: '/share/docs/api/language/typescript/',
@@ -216,8 +243,72 @@ const config: Config = {
           ],
         },
         {
-          title: '开源',
+          title: '示例',
           items: [
+            {
+              label: 'ECharts',
+              to: '/share/docs/examples/visualizing/echarts/',
+            },
+            {
+              label: 'OpenLayers',
+              to: '/share/docs/examples/webgis/openlayers/',
+            },
+            // {
+            //   label: 'Cesium',
+            //   to: '/share/docs/examples/webgis/cesium/',
+            // },
+          ],
+        },
+        // {
+        //   title: '开源',
+        //   items: [
+        //     {
+        //       // JavaScript 工具集
+        //       label: 'Dora',
+        //       href: 'https://yincw.github.io/dora/',
+        //     },
+        //     {
+        //       // CSS 工具集
+        //       label: 'Rework',
+        //       href: 'https://yincw.github.io/rework/',
+        //     },
+        //     {
+        //       // CSS/JS UI 库
+        //       label: 'Anole UI',
+        //       href: 'https://yincw.github.io/anole-ui/',
+        //     },
+        //     // {
+        //     //   // Fetch 请求库
+        //     //   label: 'httpUtil',
+        //     //   href: 'https://yincw.github.io/',
+        //     // },
+        //     // {
+        //     //   // React 动态表单
+        //     //   label: 'xform',
+        //     //   href: 'https://yincw.github.io/',
+        //     // },
+        //     // {
+        //     //   // React 后台管理示例
+        //     //   label: 'admin-example',
+        //     //   href: 'https://yincw.github.io/',
+        //     // },
+        //   ],
+        // },
+        {
+          title: '更多',
+          items: [
+            // {
+            //   label: '微课侠',
+            //   href: 'https://vikexia.com/urls',
+            // },
+            {
+              label: '前后端交互规范',
+              href: 'https://yincw.github.io/api/',
+            },
+            {
+              label: '前端可视化开发平台',
+              href: 'https://yincw.github.io/vd/',
+            },
             {
               // JavaScript 工具集
               label: 'Dora',
@@ -233,54 +324,27 @@ const config: Config = {
               label: 'Anole UI',
               href: 'https://yincw.github.io/anole-ui/',
             },
+
             // {
-            //   // Fetch 请求库
-            //   label: 'httpUtil',
-            //   href: 'https://yincw.github.io/',
+            //   label: 'TypeDoc',
+            //   href: 'https://yincw.github.io/dora/',
             // },
-            // {
-            //   // React 动态表单
-            //   label: 'xform',
-            //   href: 'https://yincw.github.io/',
-            // },
-            // {
-            //   // React 后台管理示例
-            //   label: 'admin-example',
-            //   href: 'https://yincw.github.io/',
-            // },
-          ],
-        },
-        {
-          title: '更多',
-          items: [
-            {
-              label: '前后端交互规范',
-              href: 'https://yincw.github.io/api/',
-            },
-            {
-              label: '微课侠',
-              href: 'https://vikexia.com/urls',
-            },
-            {
-              label: '前端可视化开发平台',
-              href: 'https://yincw.github.io/vd/',
-            },
-            {
-              label: 'TypeDoc',
-              href: 'https://yincw.github.io/dora/',
-            },
             {
               label: 'Docusaurus',
-              href: 'https://yincw.github.io/rework/',
+              to: '/share/docs/tutorial/intro',
             },
-            {
-              label: 'Dumi',
-              href: 'https://yincw.github.io/anole-ui/',
-            },
-            {
-              label: 'VitePress',
-              href: 'https://yincw.github.io/',
-            },
+            // {
+            //   label: 'Dumi',
+            //   href: 'https://yincw.github.io/rework/',
+            // },
+            // {
+            //   label: 'Dumi',
+            //   href: 'https://yincw.github.io/anole-ui/',
+            // },
+            // {
+            //   label: 'VitePress',
+            //   href: 'https://yincw.github.io/',
+            // },
           ],
         },
       ],

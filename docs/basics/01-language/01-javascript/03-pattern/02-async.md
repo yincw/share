@@ -2,10 +2,12 @@
 
 控制抽象化
 
-- async/await
 - Promise
-- generator
+- Generator 函数
   - function*/yield/next()
+- Asunc 函数
+  - async/await
+- https://www.yuque.com/yincw/nt2t79/vabkbv7kxzynm495
 
 - 事件循环（Event Loop）
 - 任务队列

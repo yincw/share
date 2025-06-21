@@ -15,7 +15,6 @@ toc_max_heading_level: 4
 #### 基础
 
 - User-Agent Client Hints 用户代理客户端提示
-- Web Components Web 组件
 - UI Events UI 事件
 - Touch events 触摸事件
 - Document Object Model (DOM)
@@ -27,11 +26,11 @@ toc_max_heading_level: 4
 - CSS Font Loading CSS 字体加载
 - CSS Custom Highlight CSS 自定义高亮
 - Local Font Access 本地字体资源
+- Invoker Commands 调用命令
+- Web Components Web 组件
+- Fenced Frame 围栏框架
 - EditContext 富文本编辑器
 - Attribution Reporting 广告/归因报告
-- Fenced Frame 围栏框架
-- Invoker Commands 调用命令
-- Web Share Web 共享
 
 #### 视图
 
@@ -56,7 +55,6 @@ toc_max_heading_level: 4
 
 - Broadcast Channel 广播频道
 - Channel Messaging 频道消息
-- Beacon 信标
 
 #### 数据流
 
@@ -179,6 +177,7 @@ toc_max_heading_level: 4
 - Popover 气泡
 - EyeDropper 吸管/拾色器
 - Contact Picker 联系人选择器
+- Web Share Web 共享
 
 ### 设备
 
@@ -205,6 +204,7 @@ toc_max_heading_level: 4
 - GPU
 - Network 移动网络/Wi-Fi
 - Bluetooth 蓝牙
+- Beacon 信标
 - Sensor 传感器（罗盘/加速计/陀螺仪）
 - Device Orientation 设备方向
 - Vibration 震动
