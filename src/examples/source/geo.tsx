@@ -1,4 +1,4 @@
-import React, { JSX, useState, useCallback, useEffect } from "react";
+import React, { JSX, useState, useCallback } from "react";
 import { RMap, RLayerTile, RLayerVector, RStyle } from "rlayers";
 import { Feature } from "ol";
 import { fromLonLat } from "ol/proj";
@@ -24,11 +24,6 @@ const Geo = (): JSX.Element => {
   .readFeatures(geojsonFeatures, {
     featureProjection: 'EPSG:3857'
   }) as Feature<Point>[];
-
-  
-  useEffect(() => {
-    // console.log(flow);
-  }, [flow]);
 
   return (
     <RMap
