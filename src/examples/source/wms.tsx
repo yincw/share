@@ -1,4 +1,5 @@
 import React, { JSX } from "react";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { RMap, RLayerTileWMS } from "rlayers";
 import { fromLonLat } from "ol/proj";
 import "ol/ol.css";
@@ -14,17 +15,19 @@ const WMS = (): JSX.Element => {
   };
 
   return (
-    <RMap
-      width={"100%"}
-      height={"60vh"}
-      initial={initial}
-    >
-      <RLayerTileWMS
-        url={url}
-        projection="EPSG:3857"
-        zIndex={0}
-      />
-    </RMap>
+    <BrowserOnly>
+      {() => <RMap
+        width={"100%"}
+        height={"60vh"}
+        initial={initial}
+      >
+        <RLayerTileWMS
+          url={url}
+          projection="EPSG:3857"
+          zIndex={0}
+        />
+      </RMap>}
+    </BrowserOnly>
   );
 }
 

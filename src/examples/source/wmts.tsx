@@ -1,4 +1,5 @@
 import React, { JSX } from "react";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { RMap, RLayerWMTS } from "rlayers";
 import { fromLonLat } from "ol/proj";
 import "ol/ol.css";
@@ -14,21 +15,23 @@ const WMTS = (): JSX.Element => {
   };
 
   return (
-    <RMap
-      width={"100%"}
-      height={"60vh"}
-      initial={initial}
-    >
-      <RLayerWMTS
-        // onCapabilities={function (opt) {
-        //   console.log("opt", opt);
-        // }}
-        url={url}
-        layer="World_Imagery"
-        projection="EPSG:3857"
-        zIndex={0}
-      />
-    </RMap>
+    <BrowserOnly>
+      {() => <RMap
+        width={"100%"}
+        height={"60vh"}
+        initial={initial}
+      >
+        <RLayerWMTS
+          // onCapabilities={function (opt) {
+          //   console.log("opt", opt);
+          // }}
+          url={url}
+          layer="World_Imagery"
+          projection="EPSG:3857"
+          zIndex={0}
+        />
+      </RMap>}
+    </BrowserOnly>
   );
 }
 

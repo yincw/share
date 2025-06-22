@@ -1,4 +1,5 @@
 import React, { JSX } from "react";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { RMap, ROSM } from "rlayers";
 import { fromLonLat } from "ol/proj";
 import "ol/ol.css";
@@ -13,13 +14,15 @@ const OSM = (): JSX.Element => {
   };
 
   return (
-    <RMap
-      width={"100%"}
-      height={"60vh"}
-      initial={initial}
-    >
-      <ROSM />
-    </RMap>
+    <BrowserOnly>
+      {() => <RMap
+        width={"100%"}
+        height={"60vh"}
+        initial={initial}
+      >
+        <ROSM />
+      </RMap>}
+    </BrowserOnly>
   );
 }
 

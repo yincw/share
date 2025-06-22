@@ -1,4 +1,5 @@
 import React, { JSX } from "react";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { RMap, RLayerTile } from "rlayers";
 import { fromLonLat } from "ol/proj";
 import "ol/ol.css";
@@ -14,16 +15,18 @@ const XYZ = (): JSX.Element => {
   };
 
   return (
-    <RMap
-      width={"100%"}
-      height={"60vh"}
-      initial={initial}
-    >
-      <RLayerTile
-        url={url}
-        zIndex={0}
-      />
-    </RMap>
+    <BrowserOnly>
+      {() => <RMap
+        width={"100%"}
+        height={"60vh"}
+        initial={initial}
+      >
+        <RLayerTile
+          url={url}
+          zIndex={0}
+        />
+      </RMap>}
+    </BrowserOnly>
   );
 }
 
