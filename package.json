@@ -72,7 +72,7 @@
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "resium": "^1.19.0-beta.1",
+    "resium": "1.17",
     "rlayers": "^1.5.3"
   },
   "engines": {
