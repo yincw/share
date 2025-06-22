@@ -1,4 +1,5 @@
 import React, { JSX, useState, useCallback } from "react";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { RMap, RLayerTile, RLayerVector, RStyle } from "rlayers";
 import { Feature } from "ol";
 import { fromLonLat } from "ol/proj";
@@ -26,32 +27,34 @@ const Geo = (): JSX.Element => {
   }) as Feature<Point>[];
 
   return (
-    <RMap
-      width={"100%"}
-      height={"60vh"}
-      initial={initial}
-    >
-      <RLayerTile
-        url={url}
-        zIndex={0}
-      />
-      <RLayerVector
-        zIndex={10}
-        features={data}
-        onClick={useCallback(
-          (e) => {
-            // console.log("e", e.target.values_.name);
-            setFlow([...flow, e.target.values_.name].slice(-16));
-          },
-          [flow]
-        )}
+    <BrowserOnly>
+    {() => <RMap
+        width={"100%"}
+        height={"60vh"}
+        initial={initial}
       >
-        <RStyle.RStyle>
-            <RStyle.RStroke color="#007bff" width={2} />
-            <RStyle.RFill color="#ff000060" />
-          </RStyle.RStyle>
-      </RLayerVector>
-    </RMap>
+        <RLayerTile
+          url={url}
+          zIndex={0}
+        />
+        <RLayerVector
+          zIndex={10}
+          features={data}
+          onClick={useCallback(
+            (e) => {
+              // console.log("e", e.target.values_.name);
+              setFlow([...flow, e.target.values_.name].slice(-16));
+            },
+            [flow]
+          )}
+        >
+          <RStyle.RStyle>
+              <RStyle.RStroke color="#007bff" width={2} />
+              <RStyle.RFill color="#ff000060" />
+            </RStyle.RStyle>
+        </RLayerVector>
+      </RMap>}
+    </BrowserOnly>
   );
 }
 
