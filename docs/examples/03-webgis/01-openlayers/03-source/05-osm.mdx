@@ -6,3 +6,32 @@ import OSM from "@site/src/examples/source/osm.tsx";
 <CodeBlock>
     <OSM />
 </CodeBlock>
+
+```jsx
+// OSM
+import React, { JSX } from "react";
+import { RMap, ROSM } from "rlayers";
+import { fromLonLat } from "ol/proj";
+import "ol/ol.css";
+
+const origin = [114.322000, 30.375699];
+
+const OSM = (): JSX.Element => {
+  const initial = {
+    center: fromLonLat(origin),
+    zoom: 11
+  };
+
+  return (
+    <RMap
+        width={"100%"}
+        height={"60vh"}
+        initial={initial}
+    >
+        <ROSM />
+    </RMap>
+  );
+}
+
+export default OSM;
+```

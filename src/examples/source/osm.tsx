@@ -1,5 +1,5 @@
-import React, { JSX } from "react";
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import React, { JSX } from "react";
 import { RMap, ROSM } from "rlayers";
 import { fromLonLat } from "ol/proj";
 import "ol/ol.css";

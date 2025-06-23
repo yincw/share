@@ -1,5 +1,5 @@
-import React, { JSX, useState, useCallback } from "react";
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import React, { JSX } from "react";
 import { RMap, RLayerTile, RLayerVector, RStyle } from "rlayers";
 import { Feature } from "ol";
 import { fromLonLat } from "ol/proj";
@@ -13,13 +13,11 @@ import geojsonFeatures from "./jx.json";
 const origin = [114.322000, 30.375699];
 
 const Geo = (): JSX.Element => {
-  const [flow, setFlow] = useState<any[]>([]);
-
-	const url = "http://webrd0{1-4}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}";
   const initial = {
     center: fromLonLat(origin),
     zoom: 10
   };
+	const url = "http://webrd0{1-4}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}";
 
   const data = new GeoJSON()
   .readFeatures(geojsonFeatures, {
@@ -40,13 +38,6 @@ const Geo = (): JSX.Element => {
         <RLayerVector
           zIndex={10}
           features={data}
-          onClick={useCallback(
-            (e) => {
-              // console.log("e", e.target.values_.name);
-              setFlow([...flow, e.target.values_.name].slice(-16));
-            },
-            [flow]
-          )}
         >
           <RStyle.RStyle>
               <RStyle.RStroke color="#007bff" width={2} />

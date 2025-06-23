@@ -6,3 +6,37 @@ import WMS from "@site/src/examples/source/wms.tsx";
 <CodeBlock>
     <WMS />
 </CodeBlock>
+
+```jsx
+// WMS
+import React, { JSX } from "react";
+import { RMap, RLayerTileWMS } from "rlayers";
+import { fromLonLat } from "ol/proj";
+import "ol/ol.css";
+
+const origin = [114.322000, 30.375699];
+
+const WMS = (): JSX.Element => {
+  const initial = {
+    center: fromLonLat(origin),
+    zoom: 11
+  };
+  const url = "https://sampleserver6.arcgisonline.com/arcgis/services/Toronto/ImageServer/WMSServer?request=GetCapabilities&service=WMS";
+
+  return (
+    <RMap
+        width={"100%"}
+        height={"60vh"}
+        initial={initial}
+    >
+        <RLayerTileWMS
+            url={url}
+            projection="EPSG:3857"
+            zIndex={0}
+        />
+    </RMap>
+  );
+}
+
+export default WMS;
+```

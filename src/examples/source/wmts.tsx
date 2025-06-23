@@ -1,5 +1,5 @@
-import React, { JSX } from "react";
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import React, { JSX } from "react";
 import { RMap, RLayerWMTS } from "rlayers";
 import { fromLonLat } from "ol/proj";
 import "ol/ol.css";
@@ -8,11 +8,11 @@ import "ol/ol.css";
 const origin = [114.322000, 30.375699];
 
 const WMTS = (): JSX.Element => {
-	const url = "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS?service=WMTS&request=GetCapabilities";
   const initial = {
     center: fromLonLat(origin),
     zoom: 11
   };
+	const url = "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/WMTS?service=WMTS&request=GetCapabilities";
 
   return (
     <BrowserOnly>
